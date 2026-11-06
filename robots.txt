@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://liananutri.github.io/liana-dias-nutri-portfolio/sitemap.xml
