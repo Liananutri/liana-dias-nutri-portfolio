@@ -101,7 +101,7 @@
           <p class="eyebrow reveal">Nutricionista · CRN-4 26102908</p>
           <h1 id="hero-title" class="hero-title">
             <span class="mask"><span>Liana</span></span>
-            <span class="mask"><em>Dias</em></span>
+            <span class="mask"><em class="foil">Dias</em></span>
           </h1>
           <p class="hero-tagline reveal">Nutrição comportamental e emagrecimento saudável, sem dietas restritivas.</p>
           <p class="hero-lead reveal">
@@ -317,6 +317,95 @@
             </li>
           </ol>
         </div>
+
+        <!-- Teste: qual formato combina com você -->
+        <div class="quiz reveal" id="teste">
+          <div class="quiz-intro">
+            <p class="quiz-kicker">Teste rápido</p>
+            <h3 class="quiz-title">Qual formato <em>combina com você?</em></h3>
+            <p>Responda 3 perguntas e receba uma sugestão inicial de acompanhamento.</p>
+            <div class="quiz-progress" aria-hidden="true"><span></span></div>
+          </div>
+
+          <form class="quiz-form" novalidate>
+            <fieldset class="quiz-step" data-step="1">
+              <legend><span class="quiz-count">Pergunta 1 de 3</span>O que você busca neste momento?</legend>
+              <div class="quiz-options">
+                <label class="quiz-option" for="q1-0">
+                  <input type="radio" name="q1" id="q1-0" value="0">
+                  <span class="quiz-letter" aria-hidden="true">A</span>
+                  <span>Uma orientação pontual, para tirar dúvidas e ter um plano</span>
+                </label>
+                <label class="quiz-option" for="q1-1">
+                  <input type="radio" name="q1" id="q1-1" value="1">
+                  <span class="quiz-letter" aria-hidden="true">B</span>
+                  <span>Começar uma mudança de hábitos com acompanhamento</span>
+                </label>
+                <label class="quiz-option" for="q1-2">
+                  <input type="radio" name="q1" id="q1-2" value="2">
+                  <span class="quiz-letter" aria-hidden="true">C</span>
+                  <span>Consolidar mudanças de forma duradoura</span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="quiz-step" data-step="2" hidden>
+              <legend><span class="quiz-count">Pergunta 2 de 3</span>Você já passou por dietas restritivas?</legend>
+              <div class="quiz-options">
+                <label class="quiz-option" for="q2-0">
+                  <input type="radio" name="q2" id="q2-0" value="0">
+                  <span class="quiz-letter" aria-hidden="true">A</span>
+                  <span>Não, ou poucas vezes</span>
+                </label>
+                <label class="quiz-option" for="q2-1">
+                  <input type="radio" name="q2" id="q2-1" value="1">
+                  <span class="quiz-letter" aria-hidden="true">B</span>
+                  <span>Sim, algumas vezes</span>
+                </label>
+                <label class="quiz-option" for="q2-2">
+                  <input type="radio" name="q2" id="q2-2" value="2">
+                  <span class="quiz-letter" aria-hidden="true">C</span>
+                  <span>Sim, muitas vezes, com efeito sanfona</span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="quiz-step" data-step="3" hidden>
+              <legend><span class="quiz-count">Pergunta 3 de 3</span>Que tipo de apoio você imagina?</legend>
+              <div class="quiz-options">
+                <label class="quiz-option" for="q3-0">
+                  <input type="radio" name="q3" id="q3-0" value="0">
+                  <span class="quiz-letter" aria-hidden="true">A</span>
+                  <span>Um direcionamento inicial</span>
+                </label>
+                <label class="quiz-option" for="q3-1">
+                  <input type="radio" name="q3" id="q3-1" value="1">
+                  <span class="quiz-letter" aria-hidden="true">B</span>
+                  <span>Retornos próximos por alguns meses</span>
+                </label>
+                <label class="quiz-option" for="q3-2">
+                  <input type="radio" name="q3" id="q3-2" value="2">
+                  <span class="quiz-letter" aria-hidden="true">C</span>
+                  <span>Apoio contínuo ao longo do ano</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="quiz-result" hidden>
+              <p class="quiz-count">Sugestão inicial</p>
+              <h4 class="quiz-result-title" tabindex="-1"></h4>
+              <p class="quiz-result-text"></p>
+              <p class="quiz-note">O formato ideal é definido com a nutricionista, na conversa de agendamento.</p>
+              <div class="quiz-actions">
+                <a class="btn btn-primary quiz-cta" href="https://wa.me/5521991571424" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                  Conversar sobre este formato
+                </a>
+                <button type="button" class="btn btn-ghost quiz-restart">Refazer o teste</button>
+              </div>
+            </div>
+
+            <button type="button" class="quiz-back" hidden>← Voltar</button>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -485,7 +574,7 @@
           <h2 id="contato-title" class="section-title section-title--light">Vamos <em>conversar?</em></h2>
           <p>Agende sua consulta ou tire suas dúvidas diretamente pelo WhatsApp.</p>
           <div class="contact-actions">
-            <a class="btn btn-light" data-wa="Olá, Liana! Gostaria de agendar uma consulta." href="https://wa.me/5521991571424" target="_blank" rel="noopener">
+            <a class="btn btn-gold" data-wa="Olá, Liana! Gostaria de agendar uma consulta." href="https://wa.me/5521991571424" target="_blank" rel="noopener">
               <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
               (21) 99157-1424
             </a>
@@ -534,6 +623,8 @@
       </div>
     </div>
   </footer>
+
+  <div class="cursor" aria-hidden="true"></div>
 
   <!-- Botão flutuante do WhatsApp (aparece após a primeira dobra) -->
   <a class="wa-float" data-wa="Olá, Liana! Gostaria de agendar uma consulta." href="https://wa.me/5521991571424" target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">

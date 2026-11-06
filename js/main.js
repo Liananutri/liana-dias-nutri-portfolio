@@ -133,6 +133,92 @@ if (finePointer && !reduceMotion) {
   });
 }
 
+/* Cursor com anel dourado e botões magnéticos (somente computador) */
+if (finePointer && !reduceMotion) {
+  const cursor = document.querySelector(".cursor");
+  document.documentElement.classList.add("has-cursor");
+  let tx = -100, ty = -100, cx = -100, cy = -100;
+  window.addEventListener("pointermove", (e) => {
+    tx = e.clientX; ty = e.clientY;
+    cursor.classList.add("is-active");
+    cursor.classList.toggle("is-hover", !!e.target.closest("a, button, summary, label, [role='tab']"));
+  }, { passive: true });
+  document.addEventListener("pointerleave", () => cursor.classList.remove("is-active"));
+  (function follow() {
+    cx += (tx - cx) * 0.2; cy += (ty - cy) * 0.2;
+    cursor.style.setProperty("--cx", `${cx.toFixed(1)}px`);
+    cursor.style.setProperty("--cy", `${cy.toFixed(1)}px`);
+    requestAnimationFrame(follow);
+  })();
+
+  document.querySelectorAll(".btn-primary, .btn-gold").forEach((btn) => {
+    btn.addEventListener("pointermove", (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) * 0.18;
+      const y = (e.clientY - r.top - r.height / 2) * 0.3;
+      btn.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+    });
+    btn.addEventListener("pointerleave", () => (btn.style.transform = ""));
+  });
+}
+
+/* Teste "Qual formato combina com você?" */
+const quiz = document.querySelector(".quiz");
+if (quiz) {
+  const steps = [...quiz.querySelectorAll(".quiz-step")];
+  const result = quiz.querySelector(".quiz-result");
+  const back = quiz.querySelector(".quiz-back");
+  const form = quiz.querySelector(".quiz-form");
+  const RESULTS = [
+    { title: "Consulta avulsa", text: "Um bom ponto de partida para quem busca orientação pontual e um plano alimentar individualizado." },
+    { title: "Acompanhamento trimestral", text: "Três meses para iniciar a mudança de hábitos, com retornos e ajustes próximos ao longo do processo." },
+    { title: "Acompanhamento semestral", text: "Seis meses para consolidar hábitos, sair do ciclo de restrição e ganhar autonomia nas escolhas." },
+    { title: "Acompanhamento anual", text: "Doze meses de apoio contínuo para manter a constância nas diferentes fases da rotina." },
+  ];
+  let current = 0;
+
+  const show = (i) => {
+    current = i;
+    steps.forEach((st, k) => (st.hidden = k !== i));
+    result.hidden = i < steps.length;
+    back.hidden = i === 0 || i >= steps.length;
+    quiz.style.setProperty("--quiz", Math.min(i, steps.length) / steps.length);
+  };
+
+  const finish = () => {
+    const score = steps.reduce((sum, st) => sum + Number(st.querySelector("input:checked")?.value || 0), 0);
+    const r = RESULTS[score <= 1 ? 0 : score <= 3 ? 1 : score <= 5 ? 2 : 3];
+    result.querySelector(".quiz-result-title").textContent = r.title;
+    result.querySelector(".quiz-result-text").textContent = r.text;
+    const msg = `Olá, Liana! Fiz o teste no site e a sugestão foi: ${r.title}. Gostaria de saber mais.`;
+    result.querySelector(".quiz-cta").href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+    show(steps.length);
+    result.querySelector(".quiz-result-title").focus({ preventScroll: true });
+  };
+
+  // Avança ao clicar (mouse, toque, Espaço) ou com Enter; as setas só trocam a opção marcada
+  let arrowAt = 0;
+  const advance = () => setTimeout(() => (current < steps.length - 1 ? show(current + 1) : finish()), 320);
+  form.addEventListener("keydown", (e) => {
+    if (e.key.startsWith("Arrow")) arrowAt = Date.now();
+    if (e.key === "Enter" && e.target.matches("input[type=radio]:checked")) {
+      e.preventDefault();
+      advance();
+    }
+  });
+  form.addEventListener("click", (e) => {
+    if (!e.target.matches("input[type=radio]") || Date.now() - arrowAt < 100) return;
+    advance();
+  });
+  form.addEventListener("submit", (e) => e.preventDefault());
+  back.addEventListener("click", () => show(Math.max(0, current - 1)));
+  quiz.querySelector(".quiz-restart").addEventListener("click", () => {
+    form.reset();
+    show(0);
+    steps[0].querySelector("input").focus({ preventScroll: true });
+  });
+}
+
 /* Abas "Fome física ou fome emocional?" */
 const hunger = document.querySelector(".hunger");
 if (hunger) {
