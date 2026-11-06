@@ -40,6 +40,7 @@ Ao ligar um domínio próprio, substitua `https://liananutri.github.io/liana-dia
 
 ## Acessibilidade e cores
 
-Contraste conferido sobre o creme `#F4EFE7`: cacau 10,6:1 · vinho 6,5:1 · texto secundário `#6A585A` 5,8:1.
-Terracota (3,5:1), rosé (3,3:1) e dourado (2,1:1) são usados só em detalhes gráficos ou textos grandes, nunca em texto corrido.
+Paleta: vinho `#873F42`, terracota `#B66D52`, rosé dourado `#B76E79` e creme `#F4EFE7`, com o vinho profundo `#4A2326` (tom escuro do vinho) para o texto.
+Contraste conferido sobre o creme: vinho profundo 11,8:1 · vinho 6,5:1 · texto secundário `#7A5054` 5,9:1.
+Terracota (3,5:1) e rosé dourado (3,3:1) são usados só em linhas, ornamentos e detalhes, nunca em texto corrido.
 As animações são desativadas quando o sistema está configurado para reduzir movimento.
