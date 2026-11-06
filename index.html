@@ -64,6 +64,7 @@
 
   <!-- ===================== TOPO ===================== -->
   <header class="site-header" id="topo">
+    <div class="scroll-progress" aria-hidden="true"></div>
     <div class="container header-inner">
       <a class="brand" href="#inicio" aria-label="Liana Dias Nutricionista — início">
         <img src="assets/img/monograma-ld-160.webp" width="160" height="117" alt="" class="brand-mark">
@@ -98,8 +99,9 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow reveal">Nutricionista · CRN-4 26102908</p>
-          <h1 id="hero-title" class="hero-title reveal">
-            Liana <em>Dias</em>
+          <h1 id="hero-title" class="hero-title">
+            <span class="mask"><span>Liana</span></span>
+            <span class="mask"><em>Dias</em></span>
           </h1>
           <p class="hero-tagline reveal">Nutrição comportamental e emagrecimento saudável, sem dietas restritivas.</p>
           <p class="hero-lead reveal">
@@ -120,7 +122,27 @@
         </div>
 
         <figure class="hero-portrait reveal">
-          <div class="portrait-frame">
+          <svg class="portrait-arch" viewBox="0 0 100 125" preserveAspectRatio="none" aria-hidden="true">
+            <path pathLength="1" d="M0.5 125 V50 A49.5 49.5 0 0 1 99.5 50 V125"/>
+          </svg>
+          <svg class="botanical botanical--sprig" viewBox="0 0 120 200" aria-hidden="true" data-depth="-14">
+            <g class="draw">
+              <path pathLength="1" d="M18 195 C 34 150, 52 102, 104 18"/>
+              <path pathLength="1" d="M34 150 C 14 140, 8 120, 14 104 C 30 112, 38 130, 34 150 Z"/>
+              <path pathLength="1" d="M46 122 C 62 106, 80 104, 92 110 C 82 124, 64 130, 46 122 Z"/>
+              <path pathLength="1" d="M58 96 C 42 80, 40 62, 46 48 C 60 60, 64 78, 58 96 Z"/>
+              <path pathLength="1" d="M74 70 C 88 58, 104 58, 114 64 C 104 76, 88 78, 74 70 Z"/>
+              <path pathLength="1" d="M88 46 C 80 34, 82 22, 88 12 C 96 22, 96 36, 88 46 Z"/>
+            </g>
+          </svg>
+          <svg class="botanical botanical--citrus" viewBox="0 0 100 100" aria-hidden="true" data-depth="10">
+            <g class="draw">
+              <circle pathLength="1" cx="50" cy="50" r="44"/>
+              <circle pathLength="1" cx="50" cy="50" r="36"/>
+              <path pathLength="1" d="M50 50 V14 M50 50 L81 32 M50 50 L81 68 M50 50 V86 M50 50 L19 68 M50 50 L19 32"/>
+            </g>
+          </svg>
+          <div class="portrait-frame" data-depth="6">
             <picture>
               <source type="image/webp" srcset="assets/img/liana-dias-nutricionista-480.webp 480w, assets/img/liana-dias-nutricionista-800.webp 800w, assets/img/liana-dias-nutricionista-1200.webp 1200w" sizes="(max-width: 860px) 82vw, 440px">
               <img src="assets/img/liana-dias-nutricionista-800.jpg" srcset="assets/img/liana-dias-nutricionista-480.jpg 480w, assets/img/liana-dias-nutricionista-800.jpg 800w, assets/img/liana-dias-nutricionista-1200.jpg 1200w" sizes="(max-width: 860px) 82vw, 440px" width="1231" height="1536" alt="Retrato da nutricionista Liana Dias, de blazer branco, sorrindo" fetchpriority="high">
@@ -133,6 +155,14 @@
         </figure>
       </div>
     </section>
+
+    <!-- Faixa de temas (decorativa) -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Nutrição comportamental</span><span>Emagrecimento saudável</span><span>Relação leve com a comida</span><span>Ciência e empatia</span><span>Plano individualizado</span>
+        <span>Nutrição comportamental</span><span>Emagrecimento saudável</span><span>Relação leve com a comida</span><span>Ciência e empatia</span><span>Plano individualizado</span>
+      </div>
+    </div>
 
     <!-- ===================== SOBRE MIM ===================== -->
     <section class="section about" id="sobre" aria-labelledby="sobre-title">
@@ -185,22 +215,22 @@
 
         <ol class="pillars">
           <li class="pillar reveal">
-            <span class="pillar-num">I</span>
+            <span class="pillar-top"><span class="pillar-num">I</span><svg class="pillar-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M19 6h10M21 6v13L10 38a3 3 0 0 0 2.6 4.5h22.8A3 3 0 0 0 38 38L27 19V6"/><path d="M14.5 31h19"/></svg></span>
             <h3>Evidência científica</h3>
             <p>Condutas fundamentadas em evidências e nas diretrizes do Conselho Federal de Nutricionistas. Sem modismos e sem promessas milagrosas.</p>
           </li>
           <li class="pillar reveal">
-            <span class="pillar-num">II</span>
+            <span class="pillar-top"><span class="pillar-num">II</span><svg class="pillar-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 38c-3-4-4-9-4-14a14 14 0 0 1 28 0"/><path d="M19 41c-2.5-4-3.5-9-3.5-17a8.5 8.5 0 0 1 17 0c0 4-.4 7.5-1.2 10.5"/><path d="M24 24c0 7 1 12 3 17"/><path d="M38 24c0 6-1 11-2.5 15"/></svg></span>
             <h3>Individualidade</h3>
             <p>Uma anamnese cuidadosa para entender sua história, sua rotina e suas preferências. O plano é construído para você, não copiado de um modelo.</p>
           </li>
           <li class="pillar reveal">
-            <span class="pillar-num">III</span>
+            <span class="pillar-top"><span class="pillar-num">III</span><svg class="pillar-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40C10 20 22 8 40 8c0 20-12 30-30 32Z"/><path d="M10 40 30 18"/></svg></span>
             <h3>Relação leve com a comida</h3>
             <p>Sair do ciclo de restrição e culpa e construir hábitos possíveis de manter no dia a dia, com autonomia.</p>
           </li>
           <li class="pillar reveal">
-            <span class="pillar-num">IV</span>
+            <span class="pillar-top"><span class="pillar-num">IV</span><svg class="pillar-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40S7 30 7 18a8.5 8.5 0 0 1 17-2 8.5 8.5 0 0 1 17 2c0 12-17 22-17 22Z"/></svg></span>
             <h3>Acolhimento</h3>
             <p>Escuta sem julgamentos. Cada pessoa tem o seu tempo, e o acompanhamento respeita esse processo.</p>
           </li>
@@ -261,6 +291,32 @@
             <span><strong>Online</strong> Por videochamada</span>
           </li>
         </ul>
+
+        <div class="steps-block">
+          <h3 class="steps-title reveal">Como funciona</h3>
+          <ol class="steps reveal">
+            <li class="step">
+              <span class="step-dot" aria-hidden="true"></span>
+              <h4>Agendamento</h4>
+              <p>Você entra em contato pelo WhatsApp e escolhe o formato: presencial ou online.</p>
+            </li>
+            <li class="step">
+              <span class="step-dot" aria-hidden="true"></span>
+              <h4>Primeira consulta</h4>
+              <p>Anamnese detalhada: história clínica, rotina, preferências e objetivos.</p>
+            </li>
+            <li class="step">
+              <span class="step-dot" aria-hidden="true"></span>
+              <h4>Plano individualizado</h4>
+              <p>Estratégia alimentar construída para a sua realidade, com orientações claras.</p>
+            </li>
+            <li class="step">
+              <span class="step-dot" aria-hidden="true"></span>
+              <h4>Acompanhamento</h4>
+              <p>Nos programas de 3, 6 e 12 meses, retornos para ajustar o plano e consolidar hábitos.</p>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -296,6 +352,37 @@
             <p>Mudanças graduais, possíveis de manter na vida real: trabalho, família e vida social.</p>
           </li>
         </ul>
+      </div>
+
+      <div class="container">
+        <div class="hunger reveal" aria-labelledby="hunger-title">
+          <div class="hunger-head">
+            <p class="hunger-kicker">Para refletir</p>
+            <h3 id="hunger-title">Fome física ou fome emocional?</h3>
+            <p>Reconhecer a diferença é um dos primeiros passos do trabalho em nutrição comportamental. Compare os sinais:</p>
+          </div>
+
+          <div class="hunger-tabs" role="tablist" aria-label="Tipos de fome">
+            <button class="hunger-tab" role="tab" id="tab-fisica" aria-controls="panel-fisica" aria-selected="true">Fome física</button>
+            <button class="hunger-tab" role="tab" id="tab-emocional" aria-controls="panel-emocional" aria-selected="false" tabindex="-1">Fome emocional</button>
+            <span class="hunger-indicator" aria-hidden="true"></span>
+          </div>
+
+          <ul class="hunger-panel" role="tabpanel" id="panel-fisica" aria-labelledby="tab-fisica">
+            <li><span>Como surge</span>Aos poucos, com sinais no corpo, como estômago roncando ou falta de energia.</li>
+            <li><span>Urgência</span>Pode esperar um pouco.</li>
+            <li><span>O que satisfaz</span>Diferentes alimentos resolvem.</li>
+            <li><span>Quando passa</span>Quando você se sente saciado.</li>
+            <li><span>Depois</span>Não costuma vir acompanhada de culpa.</li>
+          </ul>
+          <ul class="hunger-panel" role="tabpanel" id="panel-emocional" aria-labelledby="tab-emocional" hidden>
+            <li><span>Como surge</span>De repente, ligada a uma emoção ou situação, como estresse, tédio ou ansiedade.</li>
+            <li><span>Urgência</span>Parece que precisa ser atendida agora.</li>
+            <li><span>O que satisfaz</span>Pede alimentos específicos, geralmente doces ou muito palatáveis.</li>
+            <li><span>Quando passa</span>Pode continuar mesmo depois de saciado.</li>
+            <li><span>Depois</span>Pode deixar sensação de culpa ou arrependimento.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -356,11 +443,45 @@
       </div>
     </section>
 
+    <!-- ===================== PERGUNTAS FREQUENTES ===================== -->
+    <section class="section faq" id="duvidas" aria-labelledby="duvidas-title">
+      <div class="container faq-grid">
+        <header class="section-head reveal">
+          <p class="section-index">06 — Dúvidas</p>
+          <h2 id="duvidas-title" class="section-title">Perguntas <em>frequentes</em></h2>
+          <p class="section-intro">Não encontrou sua dúvida? Fale comigo pelo WhatsApp.</p>
+        </header>
+
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>Como faço para agendar?</summary>
+            <div class="faq-body"><p>Pelo WhatsApp (21) 99157-1424. Você informa se prefere atendimento presencial ou online e combinamos o melhor dia e horário.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Onde são os atendimentos presenciais?</summary>
+            <div class="faq-body"><p>Em Niterói, na Rua da Conceição, nº 154, salas 702 e 703, Centro. Em São Gonçalo, na Rua Salvatori, nº 473, Rocha.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Como funciona a consulta online?</summary>
+            <div class="faq-body"><p>É realizada por videochamada, com o mesmo cuidado do atendimento presencial: anamnese detalhada, plano alimentar individualizado e orientações.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Qual a diferença entre consulta avulsa e acompanhamento?</summary>
+            <div class="faq-body"><p>A consulta avulsa é uma orientação pontual. Nos acompanhamentos de 3, 6 ou 12 meses há retornos ao longo do período para ajustar o plano e consolidar os hábitos.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Vou precisar cortar os alimentos de que gosto?</summary>
+            <div class="faq-body"><p>A abordagem não se baseia em listas de alimentos proibidos. O plano considera suas preferências e sua rotina, com restrições apenas quando há uma necessidade clínica.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== CONTATO ===================== -->
     <section class="section contact" id="contato" aria-labelledby="contato-title">
       <div class="container">
         <div class="contact-cta reveal">
-          <p class="section-index section-index--light">06 — Contato e agendamento</p>
+          <p class="section-index section-index--light">07 — Contato e agendamento</p>
           <h2 id="contato-title" class="section-title section-title--light">Vamos <em>conversar?</em></h2>
           <p>Agende sua consulta ou tire suas dúvidas diretamente pelo WhatsApp.</p>
           <div class="contact-actions">
