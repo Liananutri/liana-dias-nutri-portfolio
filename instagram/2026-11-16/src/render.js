@@ -9,7 +9,7 @@ const path = require('path');
   const out = path.join(dir, '..');
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 1 });
-  for (const file of fs.readdirSync(dir).filter(f => (f.startsWith('carrossel') || f.startsWith('v2-')) && f.endsWith('.html'))) {
+  for (const file of fs.readdirSync(dir).filter(f => (f.startsWith('carrossel') || f.startsWith('v3-')) && f.endsWith('.html'))) {
     await page.goto('file://' + path.join(dir, file));
     await page.evaluate(() => document.fonts.ready);
     const slides = await page.$$('section.slide');
