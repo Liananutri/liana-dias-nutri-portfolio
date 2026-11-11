@@ -1,0 +1,58 @@
+@font-face { font-family: "Cormorant Garamond"; src: url("../../../assets/fonts/cormorant-garamond-latin-500-normal.woff2"); font-weight: 500; }
+@font-face { font-family: "Cormorant Garamond"; src: url("../../../assets/fonts/cormorant-garamond-latin-600-normal.woff2"); font-weight: 600; }
+@font-face { font-family: "Cormorant Garamond"; src: url("../../../assets/fonts/cormorant-garamond-latin-500-italic.woff2"); font-weight: 500; font-style: italic; }
+@font-face { font-family: "Manrope"; src: url("../../../assets/fonts/manrope-latin-wght-normal.woff2"); font-weight: 200 800; }
+
+:root {
+  --creme: #F4EFE7; --marfim: #FBF8F3; --vinho: #873F42; --vinho-profundo: #4A2326;
+  --terracota: #B66D52; --dourado: #C5A36B; --dourado-claro: #E3CFA6; --rose-palido: #F2DADA;
+  --texto-suave: #7A5054;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #ccc; }
+.slide {
+  width: 1080px; height: 1350px; position: relative; overflow: hidden;
+  background: var(--creme); color: var(--vinho-profundo);
+  font-family: "Manrope", sans-serif; padding: 120px 100px 150px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.slide + .slide { margin-top: 20px; }
+.slide::before { /* moldura dourada fina */
+  content: ""; position: absolute; inset: 40px; border: 1.5px solid rgba(197,163,107,.55); pointer-events: none;
+}
+.tag { font-size: 24px; letter-spacing: .28em; text-transform: uppercase; color: var(--terracota); font-weight: 600; margin-bottom: 36px; }
+h1 { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 104px; line-height: 1.0; letter-spacing: -.01em; }
+h2 { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 76px; line-height: 1.04; margin-bottom: 44px; }
+h1 em, h2 em { font-style: italic; font-weight: 500; color: var(--terracota); }
+p { font-size: 36px; line-height: 1.5; color: var(--vinho-profundo); }
+p + p { margin-top: 28px; }
+.suave { color: var(--texto-suave); }
+.rule { width: 120px; height: 3px; background: var(--dourado); margin: 48px 0; }
+ul.list { list-style: none; }
+ul.list li { font-size: 34px; line-height: 1.4; padding: 22px 0 22px 64px; position: relative; border-bottom: 1px solid rgba(74,35,38,.12); }
+ul.list li:last-child { border-bottom: 0; }
+ul.list li::before { content: attr(data-n); position: absolute; left: 0; top: 18px; font-family: "Cormorant Garamond", serif; font-size: 44px; font-weight: 600; color: var(--terracota); }
+ul.list li b { font-weight: 700; }
+.nota { margin-top: 40px; padding: 28px 34px; background: var(--marfim); border-left: 4px solid var(--dourado); font-size: 29px; line-height: 1.45; }
+.ref { font-size: 22px; color: var(--texto-suave); margin-top: 30px; line-height: 1.4; }
+table { width: 100%; border-collapse: collapse; }
+td { font-size: 33px; padding: 22px 0; border-bottom: 1px solid rgba(74,35,38,.12); }
+td:last-child { text-align: right; font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 44px; color: var(--vinho); white-space: nowrap; }
+.big { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 150px; line-height: 1; color: var(--vinho); }
+
+/* rodapé */
+.foot { position: absolute; left: 100px; right: 100px; bottom: 74px; display: flex; align-items: center; justify-content: space-between; font-size: 22px; letter-spacing: .14em; color: var(--texto-suave); }
+.foot img { height: 54px; }
+.foot .handle { display: flex; align-items: center; gap: 18px; text-transform: lowercase; }
+
+/* capa e encerramento escuros */
+.escuro { background: var(--vinho-profundo); color: var(--creme); }
+.escuro h1, .escuro h2, .escuro p { color: var(--creme); }
+.escuro h1 em, .escuro h2 em { color: var(--dourado-claro); }
+.escuro .tag { color: var(--dourado); }
+.escuro .foot { color: var(--dourado-claro); }
+.escuro .suave { color: var(--rose-palido); }
+.swipe { margin-top: 60px; font-size: 26px; letter-spacing: .22em; text-transform: uppercase; color: var(--dourado); }
+.cta { margin-top: 26px; font-size: 34px; line-height: 1.5; }
+.cta b { color: var(--dourado-claro); font-weight: 700; }
+.slide, h1, h2, td, ul.list li::before { font-variant-numeric: lining-nums; }
