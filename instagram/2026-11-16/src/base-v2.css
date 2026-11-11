@@ -1,0 +1,54 @@
+/* Estética v2: Lora + Poppins, ilustrações, moldura fina, foto e CRN (padrão da conversa "Conteúdos digitais") */
+@import url("../../fonts/fonts.css");
+
+:root {
+  --creme: #F4EFE7; --marfim: #FBF8F3; --vinho: #873F42; --vinho-profundo: #4A2326;
+  --terracota: #B66D52; --dourado: #C5A36B; --dourado-claro: #E3CFA6; --rose-palido: #F2DADA;
+  --texto-suave: #7A5054;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #ccc; }
+.slide {
+  width: 1080px; height: 1350px; position: relative; overflow: hidden;
+  background: var(--creme); color: var(--vinho-profundo);
+  font-family: "Poppins", sans-serif; font-weight: 400;
+  padding: 130px 110px 170px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.slide + .slide { margin-top: 20px; }
+.slide::after { content: ""; position: absolute; inset: 36px; border: 2px solid var(--dourado); border-radius: 4px; pointer-events: none; z-index: 5; }
+.tag { font-family: "Poppins"; font-weight: 600; font-size: 24px; letter-spacing: .22em; text-transform: uppercase; color: var(--terracota); margin-bottom: 28px; }
+h1 { font-family: "Lora", serif; font-weight: 600; font-size: 96px; line-height: 1.06; color: var(--vinho); }
+h2 { font-family: "Lora", serif; font-weight: 600; font-size: 66px; line-height: 1.15; color: var(--vinho); margin-bottom: 36px; }
+h1 em, h2 em { font-style: italic; font-weight: 500; color: var(--terracota); }
+p { font-size: 34px; line-height: 1.55; font-weight: 400; }
+p + p { margin-top: 24px; }
+b { font-weight: 600; color: var(--vinho); }
+.ilustra { display: flex; justify-content: center; margin-bottom: 50px; }
+.ilustra svg { stroke: var(--terracota); fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.ilustra .ouro { stroke: var(--dourado); }
+.ilustra .cheio { fill: var(--terracota); stroke: none; }
+.ilustra .cheio-ouro { fill: var(--dourado-claro); stroke: none; }
+.cartao { background: var(--marfim); border-radius: 20px; padding: 36px 40px; box-shadow: 0 6px 24px rgba(74,35,38,.08); }
+.nota { margin-top: 36px; background: var(--marfim); border-left: 6px solid var(--terracota); border-radius: 0 16px 16px 0; padding: 26px 32px; font-size: 28px; line-height: 1.5; }
+.ref { font-size: 21px; color: var(--texto-suave); margin-top: 28px; line-height: 1.45; font-weight: 300; }
+.grade { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.grade .item { background: var(--marfim); border-radius: 20px; padding: 28px 26px; display: flex; gap: 20px; align-items: center; font-size: 28px; line-height: 1.3; }
+.grade .item svg { flex: none; width: 64px; height: 64px; stroke: var(--terracota); fill: none; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; }
+.foot { position: absolute; left: 110px; right: 110px; bottom: 76px; display: flex; justify-content: space-between; align-items: center; font-size: 22px; color: var(--texto-suave); z-index: 6; }
+.foot img { height: 50px; vertical-align: middle; margin-right: 14px; }
+.foot .pag { font-family: "Lora"; font-style: italic; font-size: 26px; color: var(--terracota); }
+/* capa e encerramento */
+.capa { justify-content: flex-end; padding-bottom: 210px; }
+.foto-fundo { position: absolute; inset: 0; background-size: cover; background-position: center 20%; }
+.foto-fundo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(74,35,38,0) 30%, rgba(74,35,38,.92) 72%); }
+.sobre-foto { position: relative; z-index: 2; color: var(--creme); }
+.sobre-foto h1, .sobre-foto h2 { color: var(--creme); }
+.sobre-foto h1 em, .sobre-foto h2 em { color: var(--dourado-claro); }
+.sobre-foto .tag { color: var(--dourado-claro); }
+.sobre-foto p { color: var(--creme); }
+.sobre-foto b { color: var(--dourado-claro); }
+.foto-fundo + .sobre-foto ~ .foot, .com-foto .foot { color: var(--dourado-claro); }
+.assinatura { margin-top: 40px; padding-top: 26px; border-top: 1.5px solid rgba(227,207,166,.5); font-size: 23px; line-height: 1.55; font-weight: 300; }
+.selo { display: inline-block; background: var(--terracota); color: var(--marfim); font-weight: 600; font-size: 22px; letter-spacing: .14em; text-transform: uppercase; padding: 12px 22px; border-radius: 40px; margin-bottom: 30px; }
+.slide, h1, h2 { font-variant-numeric: lining-nums; }
