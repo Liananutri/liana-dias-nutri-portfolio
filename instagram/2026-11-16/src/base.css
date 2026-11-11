@@ -56,3 +56,5 @@ td:last-child { text-align: right; font-family: "Cormorant Garamond", serif; fon
 .cta { margin-top: 26px; font-size: 34px; line-height: 1.5; }
 .cta b { color: var(--dourado-claro); font-weight: 700; }
 .slide, h1, h2, td, ul.list li::before { font-variant-numeric: lining-nums; }
+.assinatura { margin-top: 56px; font-size: 24px; line-height: 1.5; color: var(--rose-palido); letter-spacing: .02em; }
+.assinatura b { color: var(--dourado-claro); font-weight: 600; }
