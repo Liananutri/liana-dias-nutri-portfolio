@@ -1,5 +1,55 @@
 # Pauta: 13 a 20 de novembro de 2026
 
+> **Atualização de 11/11:** esta pauta foi realinhada ao cronograma de novembro (`instagram/novembro/cronograma.md`). **Sexta-feira é o dia de gravação de Reels.** A tabela abaixo substitui o calendário original.
+
+## Calendário revisado
+
+| Dia | Hora | Formato | Tema | Status |
+|---|---|---|---|---|
+| Qui 12 | ao longo do dia | Stories | Bastidores do congresso | Você grava no congresso |
+| Sex 13 | 18h | Reel | Responde, Nutri!: tapioca × pão | Gravar de manhã e publicar à noite |
+| Sáb 14 | 10h | Carrossel | Dia Mundial do Diabetes: glicemia vai além do açúcar | A produzir |
+| Dom 15 | 10h | Reel | O que eu aprendi no congresso | Imagens de quinta + fala gravada na sexta |
+| Seg 16 | 10h | Carrossel | Massa muscular depois dos 35 (adaptar o carrossel de proteína) | Rascunho, aguardando aprovação |
+| Qua 18 | 10h | Reel | Minha rotina de refeições | Imagens ao longo da semana + narração na sexta |
+| Sex 20 | 10h | Reel | Responde, Nutri!: comer de 3 em 3 horas (feriado: deixar agendado) | Gravar na sexta 13 |
+| Sex 27 | 10h | Reel | Responde, Nutri!: ovo e colesterol | Gravar na sexta 20 |
+
+O carrossel de resistência à insulina que estava agendado para 13/11 foi **descartado**, porque o tema já foi publicado em 09/11.
+
+## Gravação: sexta 13/11 (cerca de 60 a 75 min)
+
+Grave tudo com a mesma roupa e a mesma luz, sem trocar o cenário.
+
+1. **Responde, Nutri!: tapioca** (cerca de 35 s), para publicar no mesmo dia às 18h. Roteiro na seção REEL 1.
+2. **Responde, Nutri!: 3 em 3 horas** (cerca de 38 s), para agendar em 20/11. Roteiro na seção REEL 2.
+3. **Congresso** (de 30 a 40 s): 3 falas curtas para a câmera, uma por aprendizado. O roteiro sai depois que você me mandar suas anotações de quinta.
+4. **Narração da rotina de refeições** (de 30 a 40 s): é só a voz, que vai por cima das imagens. Roteiro abaixo.
+
+### REEL: Minha rotina de refeições (qua 18/11 · Conexão)
+
+**Imagens:** grave ao longo da semana, de 3 a 5 segundos por refeição, cada uma no momento em que acontecer. Café da manhã, almoço, lanche e jantar. O celular apoiado já basta.
+
+**Gancho:** "Muita gente acha que nutricionista come perfeito o tempo todo. Vou te mostrar como é a minha rotina de verdade."
+
+**Narração (MODELO: ajuste ao que você realmente faz, porque o valor deste Reel é ser verdadeiro):**
+> "Muita gente acha que nutricionista come perfeito o tempo todo. Vou te mostrar como é a minha rotina de verdade.
+> No café, eu priorizo uma fonte de proteína, porque me mantém saciada até o almoço.
+> O almoço é comida de verdade, montada do jeito que dá no dia: às vezes marmita, às vezes restaurante.
+> O lanche depende da fome. Tem dia que eu como, tem dia que não.
+> E no jantar, nada de regra de horário: eu como quando chego.
+> Não existe rotina perfeita. Existe rotina possível, e ela é diferente para cada pessoa."
+
+**Texto na tela:** "Rotina real, não perfeita" e o nome de cada refeição.
+
+**Legenda (resumo):** rotina possível em vez de perfeita, com a ressalva de que esta é a rotina dela e não uma recomendação para ninguém. Fecha com a pergunta "Como é a sua?" e a assinatura padrão.
+
+**Cuidado:** não mostrar marcas de produtos. Sem gramaturas nem horários rígidos, para o vídeo não virar prescrição.
+
+---
+
+# Pauta original
+
 **Objetivo da semana:** alcançar quem ainda não segue o perfil. A série "Responde Nutri" é o formato com melhor desempenho (média de cerca de 330 visualizações, contra cerca de 240 no geral), e os carrosséis servem para gerar salvamentos e reforçar autoridade.
 
 | Dia | Hora | Formato | Tema | Status |
