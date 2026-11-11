@@ -45,3 +45,23 @@ O modelo de código está em `instagram/2026-11-16/src/base-v4.css`, e o exemplo
 
 - Use as fotos da Liana e as fotos temáticas que ela aprovou. Não use banco de imagens sem a aprovação dela.
 - Os arquivos de imagem ficam fora do repositório (`src/img/` está no `.gitignore`) e entram só nos PNGs finais.
+
+## Stories (1080×1920)
+
+Referências: stories de 05/11 ("story_criativo") e de 11/11 ("story_ordem").
+
+- Fundos alternando **vinho com degradê** e **creme**, com **moldura fina** recuada das bordas.
+- Rótulo com traço antes do texto, em maiúsculas espaçadas ("—— ENQUETE", "—— QUIZ", "—— A RESPOSTA", "—— CAIXINHA DE PERGUNTAS", "—— NOVO NO FEED"), dourado no vinho e terracota no creme.
+- Título em Lora, com palavra-chave em destaque (terracota no creme).
+- Sequência padrão de 5 stories:
+  1. **Enquete:** foto em moldura em arco.
+  2. **Quiz:** objeto recortado, como a lupa com o tomate, ou um gráfico de pizza com "?".
+  3. **Resposta:** número grande dourado dentro de um anel pontilhado, ou um gráfico, sempre com a fonte em letra pequena.
+  4. **Caixinha:** ilustração botânica de folhas em linha; o texto fala do "Responde, Nutri! de sexta".
+  5. **Divulgação:** slides do post em leque, com "DESLIZE E SALVE".
+- Assinatura no rodapé: "Liana Dias Nutri | CRN 26102908".
+
+## Reels com legenda animada
+
+- Referência aprovada: `reels-efeito-sanfona-v2_1_effects.mp4`, com a voz da Liana.
+- O arquivo no Drive parece **incompleto** (2 MB, e o vídeo não abre). Precisa ser enviado de novo para eu registrar o estilo das legendas.
