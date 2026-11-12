@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Carta ao Noel</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Pacifico&display=block" rel="stylesheet">
+<style>
+:root{--pink:#ff3e9a;--hot:#e0218a;--rose:#ff8cc6;--blush:#ffd1e8;--purple:#7b2cbf;--deep:#4a1580;--yellow:#ffd23f;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#7b2cbf}
+body{font-family:'Fredoka',sans-serif;color:#fff}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;
+ background:radial-gradient(circle at 50% 30%,#ff6fb5 0%,#e0218a 38%,#9b2fc4 72%,#5a1a92 100%)}
+.abs{position:absolute}
+.scene{position:absolute;inset:0}
+.center{left:0;right:0;text-align:center}
+.stroke{-webkit-text-stroke:14px var(--deep);paint-order:stroke fill}
+.title{font-family:'Pacifico',cursive;font-size:118px;line-height:1.15;color:#fff;text-shadow:0 10px 0 var(--deep)}
+.big{font-weight:700;font-size:76px;line-height:1.1}
+.mid{font-weight:600;font-size:56px;line-height:1.18}
+.yellow{color:var(--yellow)}
+.bubble{background:#fff;color:var(--deep);border-radius:48px;padding:34px 44px;box-shadow:0 14px 0 var(--deep);font-weight:600;font-size:54px;line-height:1.2;text-align:center}
+.card{left:90px;width:900px;top:300px;height:920px;background:#fff;border-radius:64px;box-shadow:0 18px 0 var(--deep),0 0 0 10px var(--yellow) inset;}
+.card .ill{position:absolute;left:230px;top:60px;width:440px;height:440px}
+.card .name{position:absolute;left:40px;right:40px;top:520px;text-align:center;font-weight:700;font-size:78px;line-height:1.05;color:var(--hot)}
+.card .joke{position:absolute;left:60px;right:60px;top:650px;text-align:center;font-weight:500;font-size:48px;line-height:1.22;color:var(--deep)}
+.pill{background:var(--yellow);color:var(--deep);font-weight:700;font-size:46px;border-radius:999px;padding:14px 36px;box-shadow:0 8px 0 var(--deep)}
+.num{width:150px;height:150px;border-radius:50%;background:var(--purple);border:10px solid #fff;font-weight:700;font-size:74px;line-height:130px;text-align:center;box-shadow:0 8px 0 var(--deep)}
+svg{overflow:visible}
+</style></head>
+<body><div id="stage">
+
+<!-- floating particles -->
+<div id="particles" class="abs" style="inset:0"></div>
+
+<!-- ===== SCENE 1: abertura ===== -->
+<div id="s1" class="scene">
+  <div id="s1title" class="abs center title" style="top:150px">Querido<br>Papai Noel</div>
+  <div id="env" class="abs" style="left:300px;top:560px;width:480px;height:340px">
+    <svg viewBox="0 0 480 340" width="480" height="340">
+      <rect x="0" y="40" width="480" height="300" rx="28" fill="#fff" stroke="#4a1580" stroke-width="10"/>
+      <path d="M8 60 L240 220 L472 60" fill="none" stroke="#4a1580" stroke-width="10" stroke-linejoin="round"/>
+      <g id="flap" style="transform-box:view-box;transform-origin:240px 44px">
+        <path d="M5 44 L240 210 L475 44 Z" fill="#ffd1e8" stroke="#4a1580" stroke-width="10" stroke-linejoin="round"/>
+      </g>
+      <g id="seal"><circle cx="240" cy="205" r="44" fill="#ff3e9a" stroke="#4a1580" stroke-width="8"/>
+      <path d="M240 228 C200 200 214 172 240 192 C266 172 280 200 240 228Z" fill="#fff"/></g>
+    </svg>
+  </div>
+</div>
+
+<!-- ===== SCENE 2: comportei bem ===== -->
+<div id="s2" class="scene">
+  <div id="s2a" class="abs bubble" style="left:110px;width:860px;top:210px">Me comportei bem o ano inteiro<br>e <span style="color:#e0218a">nunca</span> te peço nada.</div>
+  <div id="s2b" class="abs center big stroke" style="top:560px">Então, aqui vai uma<br>listinha <span class="yellow">pequena</span>:</div>
+  <div id="scroll" class="abs" style="left:250px;top:820px;width:580px;height:1200px;overflow:hidden">
+    <div id="paper" style="width:580px;height:1200px;background:repeating-linear-gradient(#fff8e6 0 70px,#ffd1e8 70px 74px);border-left:10px solid #4a1580;border-right:10px solid #4a1580;transform-origin:top"></div>
+  </div>
+  <div class="abs" style="left:220px;top:790px;width:640px;height:64px;border-radius:32px;background:#ffd23f;border:10px solid #4a1580"></div>
+  <div id="s2c" class="abs pill" style="left:560px;top:1000px;font-size:40px">"pequena"</div>
+</div>
+
+<!-- ===== SCENE 3: lista ===== -->
+<div id="s3" class="scene">
+  <div class="abs center" style="top:120px"><span class="pill" style="font-size:50px">A LISTINHA DA LIANA</span></div>
+  <div id="items"></div>
+</div>
+
+<!-- ===== SCENE 4: biscoitos ===== -->
+<div id="s4" class="scene">
+  <div id="s4a" class="abs bubble" style="left:110px;width:860px;top:170px">Deixo biscoitos,<br>já <b style="color:#e0218a">incluídos no plano alimentar</b>.</div>
+  <div id="plate" class="abs" style="left:240px;top:560px;width:600px;height:380px">
+    <svg viewBox="0 0 600 380" width="600" height="380">
+      <ellipse cx="300" cy="280" rx="290" ry="80" fill="#fff" stroke="#4a1580" stroke-width="10"/>
+      <ellipse cx="300" cy="270" rx="210" ry="50" fill="#ffd1e8"/>
+      <g id="ck1"><circle cx="190" cy="215" r="80" fill="#d9944a" stroke="#4a1580" stroke-width="9"/><circle cx="165" cy="190" r="11" fill="#5a2e14"/><circle cx="215" cy="235" r="11" fill="#5a2e14"/><circle cx="210" cy="180" r="9" fill="#5a2e14"/><circle cx="160" cy="240" r="8" fill="#5a2e14"/></g>
+      <g id="ck2"><circle cx="410" cy="215" r="80" fill="#d9944a" stroke="#4a1580" stroke-width="9"/><circle cx="385" cy="190" r="11" fill="#5a2e14"/><circle cx="435" cy="235" r="11" fill="#5a2e14"/><circle cx="430" cy="180" r="9" fill="#5a2e14"/>
+        <circle id="bite" cx="480" cy="160" r="0" fill="#e0218a"/></g>
+      <g id="ck3"><circle cx="300" cy="150" r="85" fill="#e3a55a" stroke="#4a1580" stroke-width="9"/><circle cx="270" cy="125" r="12" fill="#5a2e14"/><circle cx="330" cy="170" r="12" fill="#5a2e14"/><circle cx="325" cy="110" r="9" fill="#5a2e14"/><circle cx="268" cy="180" r="9" fill="#5a2e14"/></g>
+    </svg>
+  </div>
+  <div id="stamp" class="abs" style="left:560px;top:520px;transform:rotate(-14deg)">
+    <div style="border:10px solid #ffd23f;color:#ffd23f;background:rgba(74,21,128,.85);font-weight:700;font-size:44px;line-height:1.05;padding:16px 26px;border-radius:24px;text-align:center">APROVADO<br><span style="font-size:30px">pela nutri</span></div>
+  </div>
+  <div id="s4b" class="abs center big stroke" style="top:1010px">Valorize<br>o <span class="yellow">sacrifício.</span></div>
+</div>
+
+<!-- ===== SCENE 5: assinatura ===== -->
+<div id="s5" class="scene">
+  <div id="s5a" class="abs center mid stroke" style="top:250px">Com carinho e uma<br><span class="yellow">ironia elegante,</span></div>
+  <div id="sigwrap" class="abs center" style="top:470px">
+    <div id="sig" style="display:inline-block;font-family:'Pacifico';font-size:210px;line-height:1.5;color:#fff;text-shadow:0 12px 0 #4a1580;padding:10px 70px 30px">Liana</div>
+  </div>
+  <div id="spk" class="abs" style="left:0;top:0;width:1080px;height:1920px"></div>
+  <div id="s5b" class="abs center" style="top:880px"><span class="pill" style="font-size:52px">Boas festas e bons treinos!</span></div>
+</div>
+
+<!-- ===== CHARACTER (shared) ===== -->
+<div id="charPos" class="abs" style="z-index:2;left:340px;top:1150px;width:400px;height:760px">
+ <div id="charLean" style="width:400px;height:760px;transform-origin:200px 700px">
+ <div id="charBob" style="width:400px;height:760px">
+  <svg id="hero" viewBox="0 0 400 760" width="400" height="760">
+    <defs><style>.pv{transform-box:view-box}</style><linearGradient id="lens" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7b2cbf"/><stop offset=".55" stop-color="#e0218a"/><stop offset="1" stop-color="#ffd23f"/></linearGradient></defs>
+    <g id="pony" class="pv" style="transform-origin:252px 84px">
+      <path d="M250 78 C312 70 330 135 308 190 C300 212 306 232 322 246 C284 240 270 205 274 168 C278 128 268 100 246 94Z" fill="#2a1712" stroke="#140906" stroke-width="5"/>
+      <path d="M268 100 C292 120 296 160 286 196" stroke="#5b3a2c" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <rect x="244" y="74" width="20" height="26" rx="8" fill="#ff3e9a" stroke="#4a1580" stroke-width="4" transform="rotate(-20 254 87)"/>
+    </g>
+    <g id="armB" class="pv" style="transform-origin:236px 215px;transform:rotate(-8deg)">
+      <rect x="221" y="205" width="30" height="115" rx="15" fill="#b37d55" stroke="#7d4a2c" stroke-width="5"/>
+      <g id="armBf" class="pv" style="transform-origin:236px 312px;transform:rotate(10deg)">
+        <rect x="223" y="300" width="26" height="105" rx="13" fill="#b37d55" stroke="#7d4a2c" stroke-width="5"/>
+        <circle cx="236" cy="408" r="16" fill="#b37d55" stroke="#7d4a2c" stroke-width="5"/>
+        <rect x="222" y="370" width="28" height="12" rx="5" fill="#ffd23f" stroke="#4a1580" stroke-width="3" opacity="1"/>
+      </g>
+      <path d="M212 225 q0 -28 24 -30 q24 2 24 30 v26 h-48z" fill="#ff3e9a" stroke="#4a1580" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" stroke-width="5"/>
+    </g>
+    <g id="legB" class="pv" style="transform-origin:214px 375px">
+      <rect x="193" y="380" width="42" height="150" rx="21" fill="#b37d55" stroke="#7d4a2c" stroke-width="5"/>
+      <path d="M184 362 h60 l6 100 q-36 10 -72 0z" fill="#4f1786" stroke="#2e0b52" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M180 452 q36 10 72 0" stroke="#ffd23f" stroke-width="4" fill="none" stroke-dasharray="6 5"/>
+      <g><rect x="212" y="406" width="34" height="42" rx="7" fill="#4f1786" stroke="#2e0b52" stroke-width="4"/>
+        <path d="M210 402 h38 v12 q-19 8 -38 0z" fill="#ff3e9a" stroke="#2e0b52" stroke-width="4"/></g>
+      <g id="legBs" class="pv" style="transform-origin:214px 520px">
+        <rect x="195" y="508" width="38" height="150" rx="19" fill="#b37d55" stroke="#7d4a2c" stroke-width="5"/>
+        <rect x="196" y="628" width="36" height="28" rx="6" fill="#fff" stroke="#4a1580" stroke-width="3"/>
+        <g class="fancySock" style="opacity:0"><rect x="195" y="598" width="38" height="60" rx="8" fill="#7b2cbf" stroke="#4a1580" stroke-width="3"/>
+        <rect x="195" y="598" width="38" height="12" rx="5" fill="#fff" stroke="#4a1580" stroke-width="3"/>
+        <path d="M197 622 h34 M197 638 h34" stroke="#ffd23f" stroke-width="7"/></g>
+        <path d="M188 650 h36 q44 2 52 30 v6 h-88z" fill="#ffe3f1" stroke="#4a1580" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M184 684 h96" stroke="#ffd23f" stroke-width="12" stroke-linecap="round"/>
+        <path d="M184 684 h96" stroke="#4a1580" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+        <path d="M216 662 l12 -4 m2 10 l12 -4" stroke="#ff3e9a" stroke-width="4" stroke-linecap="round"/>
+      </g></g>
+    <rect x="186" y="150" width="28" height="55" fill="#cf9a72"/>
+    <path d="M186 175 q14 12 28 0" fill="#b37d55"/>
+    <path d="M152 380 L248 380 L252 410 L148 410Z" fill="#5f1fa0" stroke="#2e0b52" stroke-width="5"/>
+    <path d="M150 212 Q152 194 178 190 Q200 202 222 190 Q248 194 250 212 L240 296 Q234 330 244 384 Q200 394 156 384 Q166 330 160 296Z" fill="#ff3e9a" stroke="#4a1580" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M178 190 Q200 212 222 190" fill="none" stroke="#e0218a" stroke-width="7"/>
+    <path d="M232 230 Q238 300 226 370" stroke="#e0218a" stroke-width="5" fill="none" opacity=".7"/>
+    <g id="legF" class="pv" style="transform-origin:186px 375px">
+      <rect x="165" y="380" width="42" height="150" rx="21" fill="#cf9a72" stroke="#7d4a2c" stroke-width="5"/>
+      <path d="M156 362 h60 l6 100 q-36 10 -72 0z" fill="#6a22aa" stroke="#2e0b52" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M152 452 q36 10 72 0" stroke="#ffd23f" stroke-width="4" fill="none" stroke-dasharray="6 5"/>
+      <g>
+        <rect x="146" y="408" width="10" height="34" rx="3" fill="#ffd23f" stroke="#4a1580" stroke-width="3" transform="rotate(-10 151 425)"/>
+        <rect x="156" y="398" width="16" height="12" rx="3" fill="#7fd0ff" stroke="#4a1580" stroke-width="3"/>
+        <rect x="152" y="406" width="44" height="48" rx="8" fill="#6a22aa" stroke="#2e0b52" stroke-width="4"/>
+        <rect x="156" y="410" width="36" height="40" rx="6" fill="none" stroke="#ffd23f" stroke-width="2.5" stroke-dasharray="5 4"/>
+        <path d="M150 402 h48 v14 q-24 10 -48 0z" fill="#ff3e9a" stroke="#2e0b52" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="174" cy="412" r="4" fill="#ffd23f" stroke="#4a1580" stroke-width="2"/>
+      </g>
+      <g id="legFs" class="pv" style="transform-origin:186px 520px">
+        <rect x="167" y="508" width="38" height="150" rx="19" fill="#cf9a72" stroke="#7d4a2c" stroke-width="5"/>
+        <rect x="168" y="628" width="36" height="28" rx="6" fill="#fff" stroke="#4a1580" stroke-width="3"/>
+        <g class="fancySock" style="opacity:0"><rect x="167" y="598" width="38" height="60" rx="8" fill="#ff8cc6" stroke="#4a1580" stroke-width="3"/>
+        <rect x="167" y="598" width="38" height="12" rx="5" fill="#fff" stroke="#4a1580" stroke-width="3"/>
+        <path d="M169 622 h34 M169 638 h34" stroke="#ffd23f" stroke-width="7"/></g>
+        <path d="M160 650 h36 q44 2 52 30 v6 h-88z" fill="#fff" stroke="#4a1580" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M156 684 h96" stroke="#ffd23f" stroke-width="12" stroke-linecap="round"/>
+        <path d="M156 684 h96" stroke="#4a1580" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+        <path d="M188 662 l12 -4 m2 10 l12 -4" stroke="#ff3e9a" stroke-width="4" stroke-linecap="round"/>
+      </g></g>
+    <g id="head" class="pv" style="transform-origin:200px 180px">
+      <circle cx="149" cy="122" r="11" fill="#b37d55" stroke="#7d4a2c" stroke-width="5"/><circle cx="251" cy="122" r="11" fill="#b37d55" stroke="#7d4a2c" stroke-width="5"/>
+      <path d="M148 108 Q146 58 200 54 Q254 58 252 108 Q252 158 214 178 Q200 184 186 178 Q148 158 148 108Z" fill="#cf9a72" stroke="#7d4a2c" stroke-width="5"/>
+      <path d="M144 112 Q136 40 200 36 Q264 40 256 112 Q252 78 228 70 Q200 64 172 70 Q148 78 144 112Z" fill="#2a1712" stroke="#140906" stroke-width="5"/>
+      <path d="M170 52 Q200 46 238 56" stroke="#5b3a2c" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <ellipse cx="174" cy="140" rx="14" ry="8" fill="#ff5fa8" opacity=".35"/><ellipse cx="226" cy="140" rx="14" ry="8" fill="#ff5fa8" opacity=".35"/>
+      <g><circle cx="166" cy="134" r="3.5" fill="#ff3e9a"/><circle cx="174" cy="146" r="2.5" fill="#fff"/><circle cx="160" cy="146" r="3" fill="#ffd23f"/><circle cx="181" cy="135" r="2" fill="#fff"/><circle cx="168" cy="155" r="2.2" fill="#ff8cc6"/><circle cx="156" cy="132" r="2" fill="#fff"/>
+         <circle cx="234" cy="134" r="3.5" fill="#ff3e9a"/><circle cx="226" cy="146" r="2.5" fill="#fff"/><circle cx="240" cy="146" r="3" fill="#ffd23f"/><circle cx="219" cy="135" r="2" fill="#fff"/><circle cx="232" cy="155" r="2.2" fill="#ff8cc6"/><circle cx="244" cy="132" r="2" fill="#fff"/></g>
+      <g id="eyes" class="pv" style="transform-origin:200px 116px">
+        <path d="M164 117 Q178 104 192 117 Q178 126 164 117Z" fill="#fff"/><path d="M208 117 Q222 104 236 117 Q222 126 208 117Z" fill="#fff"/>
+        <circle cx="179" cy="115" r="7.5" fill="#3a1d12"/><circle cx="221" cy="115" r="7.5" fill="#3a1d12"/>
+        <circle cx="181.5" cy="112.5" r="2.6" fill="#fff"/><circle cx="223.5" cy="112.5" r="2.6" fill="#fff"/>
+        <path d="M162 116 Q178 102 194 115 M160 112 l-6 -5 M206 115 Q222 102 238 116 M240 112 l6 -5" stroke="#1a0d09" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </g>
+      <path d="M164 97 Q178 88 192 95 M208 95 Q222 88 236 97" stroke="#1a0d09" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+      <g id="shades" style="display:none">
+        <path d="M150 112 L160 108" stroke="#4a1580" stroke-width="5" stroke-linecap="round"/><path d="M250 112 L240 108" stroke="#4a1580" stroke-width="5" stroke-linecap="round"/>
+        <path d="M156 106 Q200 96 244 106 Q246 124 232 130 Q216 134 204 124 L196 124 Q184 134 168 130 Q154 124 156 106Z" fill="url(#lens)" stroke="#4a1580" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M166 110 L184 110 M214 110 L228 108" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".85"/>
+        <path d="M156 106 Q200 96 244 106" stroke="#ffd23f" stroke-width="5" fill="none" stroke-linecap="round"/>
+      </g>
+      <path d="M199 118 Q195 134 192 138 Q199 143 207 139" stroke="#8a5434" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <path d="M180 152 Q200 172 220 152 Q200 158 180 152Z" fill="#fff" stroke="#9c3550" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M184 158 Q200 172 216 158" stroke="#c8506e" stroke-width="3" fill="none" opacity=".6"/>
+      <g fill="#ff7a3d" stroke="#b5401a" stroke-width="2"><circle cx="149" cy="140" r="4"/><circle cx="143" cy="144" r="4"/><circle cx="155" cy="144" r="4"/><circle cx="146" cy="150" r="4"/><circle cx="152" cy="150" r="4"/><circle cx="149" cy="145" r="3" fill="#ffd23f" stroke="none"/>
+        <circle cx="251" cy="140" r="4"/><circle cx="245" cy="144" r="4"/><circle cx="257" cy="144" r="4"/><circle cx="248" cy="150" r="4"/><circle cx="254" cy="150" r="4"/><circle cx="251" cy="145" r="3" fill="#ffd23f" stroke="none"/></g>
+      <g id="hat">
+        <path d="M150 74 C160 18 228 -2 268 26 C290 42 302 66 304 94 L264 70 C240 56 176 56 150 74Z" fill="#e0218a" stroke="#4a1580" stroke-width="5"/>
+        <rect x="138" y="58" width="128" height="26" rx="13" fill="#fff" stroke="#4a1580" stroke-width="5" transform="rotate(-5 202 71)"/>
+        <circle cx="304" cy="96" r="17" fill="#ffd23f" stroke="#4a1580" stroke-width="5"/>
+      </g>
+      <ellipse id="halo" cx="200" cy="-18" rx="64" ry="14" fill="none" stroke="#ffd23f" stroke-width="10" opacity="0"/>
+    </g>
+    <g id="armF" class="pv" style="transform-origin:164px 215px;transform:rotate(8deg)">
+      <rect x="149" y="205" width="30" height="115" rx="15" fill="#cf9a72" stroke="#7d4a2c" stroke-width="5"/>
+      <g id="armFf" class="pv" style="transform-origin:164px 312px;transform:rotate(-10deg)">
+        <rect x="151" y="300" width="26" height="105" rx="13" fill="#cf9a72" stroke="#7d4a2c" stroke-width="5"/>
+        <circle cx="164" cy="408" r="16" fill="#cf9a72" stroke="#7d4a2c" stroke-width="5"/>
+        <rect x="150" y="370" width="28" height="12" rx="5" fill="#ffd23f" stroke="#4a1580" stroke-width="3" opacity="0"/>
+      </g>
+      <path d="M140 225 q0 -28 24 -30 q24 2 24 30 v26 h-48z" fill="#ff3e9a" stroke="#4a1580" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" stroke-width="5"/>
+    </g>
+  </svg>
+ </div></div>
+ <div id="ground" class="abs" style="left:-60px;top:672px;width:520px;height:36px;border-radius:50%;background:rgba(74,21,128,.35);z-index:-1"></div>
+</div>
+<div id="speed" class="abs" style="inset:0;pointer-events:none;z-index:0"></div>
+
+</div>
+<script>
+const T = {s1:[0,3.6], s2:[3.6,7.0], s3:[7.0,29.0], s4:[29.0,32.6], s5:[32.6,36.4]};
+const ITEM_START = 7.0, ITEM_DUR = 2.2;
+const BOUNCE='cubic-bezier(.34,1.7,.5,1)', OUT='cubic-bezier(.2,.8,.2,1)', IN='cubic-bezier(.6,0,.8,.3)';
+const $ = s => document.querySelector(s);
+function A(el, frames, start, dur, opt={}){
+  if(typeof el==='string') el=$(el);
+  return el.animate(frames,{delay:start*1000,duration:dur*1000,fill:opt.fill||'both',easing:opt.easing||OUT,iterations:opt.iter||1,direction:opt.dir||'normal'});
+}
+function show(el,a,b,fi=.3,fo=.3){ const d=b-a; A(el,[{opacity:0,offset:0},{opacity:1,offset:fi/d},{opacity:1,offset:1-fo/d},{opacity:0,offset:1}],a,d,{easing:'linear'}); }
+function pop(el,t,d=.6,from=0){ A(el,[{transform:`scale(${from})`,opacity:0},{transform:'scale(1)',opacity:1}],t,d,{easing:BOUNCE}); }
+function loop(el,frames,period,start=0,ease='ease-in-out'){ return A(el,frames,start,period,{iter:Infinity,easing:ease,fill:'both'}); }
+
+/* ---------- particles ---------- */
+let seed=7; const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
+const P=$('#particles');
+for(let i=0;i<46;i++){
+  const d=document.createElement('div'); const star=i%3===0; const s=star?26+rnd()*22:8+rnd()*16;
+  d.className='abs'; d.style.left=(rnd()*1080)+'px'; d.style.top='-60px';
+  d.style.width=s+'px'; d.style.height=s+'px';
+  if(star){d.innerHTML=`<svg viewBox="0 0 20 20" width="${s}" height="${s}"><path d="M10 0 L12.5 7.5 L20 10 L12.5 12.5 L10 20 L7.5 12.5 L0 10 L7.5 7.5Z" fill="${rnd()>.5?'#ffd23f':'#fff'}"/></svg>`}
+  else{d.style.borderRadius='50%';d.style.background=['#fff','#ffd1e8','#ffd23f','#fff'][i%4];d.style.opacity=.75}
+  P.appendChild(d);
+  const per=5+rnd()*5, off=-rnd()*per, sway=(rnd()-.5)*160;
+  loop(d,[{transform:`translate(0,0) rotate(0)`},{transform:`translate(${sway}px,2050px) rotate(${360*(rnd()>.5?1:-1)}deg)`}],per,off,'linear');
+}
+
+/* ---------- scene visibility ---------- */
+for(const k in T) show('#'+k,T[k][0],T[k][1],k==='s1'?0.01:.3,k==='s5'?.01:.3);
+
+/* ---------- character global ---------- */
+const run = (a,b)=>{ // running cycle segments via separate anims
+};
+// Character position by scene
+A('#charPos',[
+ {transform:'translate(0,900px)',offset:0},
+ {transform:'translate(0,0)',offset:.9/36.4},
+ {transform:'translate(0,0) scale(1)',offset:7.0/36.4},
+ {transform:'translate(0,40px) scale(.9)',offset:7.3/36.4},
+ {transform:'translate(0,40px) scale(.9)',offset:29.0/36.4},
+ {transform:'translate(-170px,60px) scale(1)',offset:29.3/36.4},
+ {transform:'translate(-170px,60px) scale(1)',offset:32.6/36.4},
+ {transform:'translate(0,0) scale(1)',offset:32.9/36.4},
+ {transform:'translate(0,0) scale(1)',offset:1}],0,36.4,{easing:OUT});
+
+// Limbs
+function limbs(el,frames,a,b,period){ const n=Math.floor((b-a)/period+1e-6); for(let i=0;i<n;i++) A(el,frames,a+i*period,period,{easing:'linear',fill:'none'}); }
+function hold(el,tf,a,b,ease=OUT){ A(el,[{transform:tf},{transform:tf}],a,b-a,{fill:'none'}); }
+const R=v=>v.map(x=>({transform:`rotate(${x}deg)`}));
+const P_RUN=.5, RA=7.3, RB=28.9;
+limbs('#legF',R([-42,-8,34,-12,-42]),RA,RB,P_RUN);
+limbs('#legFs',R([12,6,40,100,12]),RA,RB,P_RUN);
+limbs('#legB',R([34,-12,-42,-8,34]),RA,RB,P_RUN);
+limbs('#legBs',R([40,100,12,6,40]),RA,RB,P_RUN);
+limbs('#armF',R([38,0,-42,0,38]),RA,RB,P_RUN);
+limbs('#armFf',R([-95,-80,-105,-80,-95]),RA,RB,P_RUN);
+limbs('#armB',R([-42,0,38,0,-42]),RA,RB,P_RUN);
+limbs('#armBf',R([-105,-80,-95,-80,-105]),RA,RB,P_RUN);
+limbs('#pony',R([-16,6,14,6,-16]),RA,RB,P_RUN);
+limbs('#charBob',[{transform:'translateY(0)'},{transform:'translateY(-26px)'},{transform:'translateY(0)'}],RA,RB,P_RUN/2);
+A('#charLean',[{transform:'rotate(0)'},{transform:'rotate(7deg)',offset:.03},{transform:'rotate(7deg)',offset:.97},{transform:'rotate(0)'}],RA-.2,RB-RA+.4,{fill:'none',easing:'linear'});
+// speed lines during run
+let sd=3; const r2=()=>{sd=(sd*16807)%2147483647;return sd/2147483647};
+for(let i=0;i<9;i++){const d=document.createElement('div');d.className='abs';const w=120+r2()*200;
+ d.style.cssText=`left:1100px;top:${1250+r2()*600}px;width:${w}px;height:${8+r2()*8}px;border-radius:8px;background:rgba(255,255,255,.55)`;
+ $('#speed').appendChild(d); const per=.5+r2()*.4;
+ limbs(d,[{transform:'translateX(0)'},{transform:`translateX(-${1300+w}px)`}],RA+r2()*per,RB,per);}
+show('#speed',RA,RB,.2,.2);
+// wave (armF up) in s1 and s5
+hold('#armF','rotate(150deg)',0.5,3.6); limbs('#armFf',R([-10,-45,-10]),0.5,3.5,.5);
+hold('#armF','rotate(150deg)',32.9,36.4); limbs('#armFf',R([-10,-45,-10]),32.9,36.4,.5);
+// hands on hips in s4 (sassy)
+hold('#armF','rotate(38deg)',29.1,32.6); hold('#armFf','rotate(-118deg)',29.1,32.6);
+hold('#armB','rotate(-38deg)',29.1,32.6); hold('#armBf','rotate(118deg)',29.1,32.6);
+// s2: hands clasped-ish (angel)
+hold('#armF','rotate(-18deg)',3.8,7.1); hold('#armFf','rotate(-60deg)',3.8,7.1);
+hold('#armB','rotate(18deg)',3.8,7.1); hold('#armBf','rotate(60deg)',3.8,7.1);
+// idle breath
+limbs('#charBob',[{transform:'translateY(0)'},{transform:'translateY(-8px)'},{transform:'translateY(0)'}],0.9,7.2,1.1);
+limbs('#charBob',[{transform:'translateY(0)'},{transform:'translateY(-8px)'},{transform:'translateY(0)'}],29.2,36.4,1.1);
+limbs('#head',R([-5,5,-5]),0.4,3.6,1.4);
+limbs('#head',R([-3,3,-3]),3.8,7.0,1.6);
+limbs('#head',R([-4,6,-4]),32.6,36.4,1.2);
+limbs('#pony',R([-8,8,-8]),0.4,7.0,1.1);
+limbs('#pony',R([-8,8,-8]),29.2,36.4,1.1);
+[1.8,4.9,9.1,13.3,17.6,21.9,30.6,34.8].forEach(t=>A('#eyes',[{transform:'scaleY(1)'},{transform:'scaleY(.1)'},{transform:'scaleY(1)'}],t,.2,{fill:'none',easing:'linear'}));
+A('#halo',[{opacity:0,transform:'translateY(-40px)'},{opacity:1,transform:'translateY(0)'}],3.9,.5,{easing:BOUNCE});
+A('#halo',[{opacity:1},{opacity:0}],6.8,.3,{fill:'forwards'});
+// s4: head tilt with attitude
+limbs('#head',R([8,12,8]),29.2,32.5,1.1);
+
+/* ---------- SCENE 1 ---------- */
+A('#s1title',[{transform:'translateY(-500px) rotate(-8deg)'},{transform:'translateY(0) rotate(0)'}],0.1,.9,{easing:BOUNCE});
+loop('#s1title',[{transform:'scale(1)'},{transform:'scale(1.04)'},{transform:'scale(1)'}],1.2,1.0);
+A('#env',[{transform:'translateY(-1200px) rotate(20deg)'},{transform:'translateY(0) rotate(-4deg)'}],0.4,.9,{easing:BOUNCE});
+A('#flap',[{transform:'scaleY(1)'},{transform:'scaleY(-1)'}],1.8,.5,{easing:BOUNCE});
+A('#seal',[{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(1.8)'}],1.7,.3,{});
+A('#env',[{transform:'translateY(0) scale(1)'},{transform:'translateY(-30px) scale(1.15)'},{transform:'translateY(0) scale(1)'}],2.4,.6,{fill:'none'});
+
+/* ---------- SCENE 2 ---------- */
+pop('#s2a',3.8,.6);
+A('#s2b',[{transform:'translateX(1100px)'},{transform:'translateX(0)'}],5.0,.5,{easing:BOUNCE});
+A('#paper',[{transform:'scaleY(0)'},{transform:'scaleY(1)'}],5.5,1.3,{easing:'cubic-bezier(.3,0,.2,1)'});
+pop('#s2c',6.1,.5);
+A('#s2c',[{transform:'rotate(-6deg)'},{transform:'rotate(6deg)'}],6.6,.2,{iter:2,dir:'alternate',fill:'none'});
+
+/* ---------- SCENE 3 items ---------- */
+const S='stroke="#4a1580" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"';
+const ITEMS=[
+ {name:'Tênis novo',joke:'o atual está mais rodado<br>que carro velho',svg:`
+  <g class="wig"><path d="M40 300 Q40 220 110 210 L180 200 Q220 150 260 160 L300 230 Q380 240 400 290 L400 320 L40 320Z" fill="#ff3e9a" ${S}/>
+  <rect x="30" y="310" width="380" height="40" rx="20" fill="#ffd23f" ${S}/>
+  <path d="M200 185 l40 20 M190 205 l40 20 M180 225 l40 20" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+  <path d="M70 270 l30 20 m0 -20 l-30 20" stroke="#4a1580" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="330" cy="285" r="14" fill="#4a1580"/></g>
+  <g class="puff"><circle cx="40" cy="190" r="34" fill="#fff" ${S}/><circle cx="80" cy="150" r="24" fill="#fff" ${S}/><circle cx="20" cy="130" r="18" fill="#fff" ${S}/></g>
+  <g class="beat" style="transform-box:fill-box;transform-origin:center">
+  <path d="M290 110 v-30 q0 -10 10 -12 l20 -4 l20 -30 h60 l20 34 q20 4 20 20 v22z" fill="#7b2cbf" ${S}/>
+  <path d="M332 66 l14 -22 h22 v22z M380 66 v-22 h16 l12 22z" fill="#bde7ff" stroke="#4a1580" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="320" cy="112" r="16" fill="#4a1580"/><circle cx="410" cy="112" r="16" fill="#4a1580"/><circle cx="320" cy="112" r="6" fill="#ffd23f"/><circle cx="410" cy="112" r="6" fill="#ffd23f"/>
+  <path d="M300 92 h-10" stroke="#ffd23f" stroke-width="8" stroke-linecap="round"/></g>
+  <g class="puff"><circle cx="270" cy="100" r="16" fill="#fff" stroke="#4a1580" stroke-width="5"/></g>`},
+ {name:'Relógio com GPS',joke:'para provar que<br>eu corri mesmo',svg:`
+  <rect x="160" y="10" width="120" height="420" rx="40" fill="#7b2cbf" ${S}/>
+  <g class="wig"><circle cx="220" cy="220" r="150" fill="#ffd23f" ${S}/><circle cx="220" cy="220" r="115" fill="#fff" ${S}/>
+  <path class="dash" d="M140 270 C170 180 220 290 260 200 S300 160 300 160" fill="none" stroke="#ff3e9a" stroke-width="12" stroke-dasharray="18 16" stroke-linecap="round"/>
+  <g class="beat" style="transform-box:fill-box;transform-origin:50% 100%"><path d="M300 175 C270 140 280 95 300 95 C320 95 330 140 300 175Z" fill="#e0218a" ${S} stroke-width="7"/><circle cx="300" cy="125" r="10" fill="#fff"/></g>
+  <text x="220" y="330" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="40" fill="#4a1580">5,0 km</text></g>`},
+ {name:'Meias sem costura',joke:'bolha não rende<br>autoridade',svg:`
+  <g class="wig"><path d="M90 30 h110 v230 q0 30 30 60 q40 50 -20 90 q-40 20 -120 -40 q-20 -20 0 -70z" fill="#ff8cc6" ${S}/>
+  <rect x="90" y="30" width="110" height="34" fill="#fff" ${S}/><path d="M92 120 h106 M92 170 h106" stroke="#ffd23f" stroke-width="18"/></g>
+  <g class="wig2"><path d="M240 50 h110 v230 q0 30 30 60 q40 50 -20 90 q-40 20 -120 -40 q-20 -20 0 -70z" fill="#7b2cbf" ${S}/>
+  <rect x="240" y="50" width="110" height="34" fill="#fff" ${S}/><path d="M242 140 h106 M242 190 h106" stroke="#ffd23f" stroke-width="18"/></g>
+  <g class="beat" style="transform-box:fill-box;transform-origin:center"><circle cx="70" cy="400" r="36" fill="#fff" ${S}/><path d="M45 375 l50 50 m0 -50 l-50 50" stroke="#e0218a" stroke-width="10" stroke-linecap="round"/></g>`},
+ {name:'Colete de hidratação',joke:'porque água é o meu<br>pré-treino oficial',svg:`
+  <g class="wig"><path d="M110 40 q40 60 110 60 q70 0 110 -60 l60 40 l-30 340 h-280 l-30 -340z" fill="#ff3e9a" ${S}/>
+  <path d="M175 110 v300 M265 110 v300" stroke="#4a1580" stroke-width="8"/>
+  <rect x="80" y="180" width="80" height="150" rx="24" fill="#bde7ff" ${S}/><rect x="98" y="150" width="44" height="34" rx="8" fill="#fff" ${S}/>
+  <rect x="280" y="180" width="80" height="150" rx="24" fill="#bde7ff" ${S}/><rect x="298" y="150" width="44" height="34" rx="8" fill="#fff" ${S}/></g>
+  <g class="drop"><path d="M30 120 C10 150 10 175 30 180 C50 175 50 150 30 120Z" fill="#7fd0ff" ${S} stroke-width="6"/></g>
+  <g class="drop2"><path d="M410 160 C390 190 390 215 410 220 C430 215 430 190 410 160Z" fill="#7fd0ff" ${S} stroke-width="6"/></g>`},
+ {name:'Fone à prova de suor',joke:'que aguente o ritmo<br>(e o calor do Rio)',svg:`
+  <g class="wig"><path d="M80 260 C80 60 360 60 360 260" fill="none" stroke="#7b2cbf" stroke-width="40" stroke-linecap="round"/>
+  <path d="M80 260 C80 60 360 60 360 260" fill="none" stroke="#4a1580" stroke-width="6"/>
+  <rect x="40" y="230" width="100" height="150" rx="40" fill="#ff3e9a" ${S}/><rect x="300" y="230" width="100" height="150" rx="40" fill="#ff3e9a" ${S}/>
+  <circle cx="90" cy="305" r="22" fill="#ffd23f"/><circle cx="350" cy="305" r="22" fill="#ffd23f"/></g>
+  <g class="note"><path d="M190 260 v-80 l60 -15 v80" fill="none" stroke="#fff" stroke-width="12"/><circle cx="178" cy="262" r="18" fill="#fff"/><circle cx="238" cy="247" r="18" fill="#fff"/></g>
+  <g class="drop"><path d="M30 120 C10 150 10 175 30 180 C50 175 50 150 30 120Z" fill="#7fd0ff" ${S} stroke-width="6"/></g>
+  <g class="drop2"><path d="M410 160 C390 190 390 215 410 220 C430 215 430 190 410 160Z" fill="#7fd0ff" ${S} stroke-width="6"/></g>`},
+ {name:'Óculos de corrida',joke:'pra não queimar<br>as vistas',svg:`
+  <defs><linearGradient id="lens2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7b2cbf"/><stop offset=".55" stop-color="#e0218a"/><stop offset="1" stop-color="#ffd23f"/></linearGradient></defs>
+  <g class="beat" style="transform-box:fill-box;transform-origin:center"><circle cx="360" cy="70" r="40" fill="#ffd23f" ${S}/>
+  <path d="M360 8 v-0 M360 10 v-22 M360 130 v22 M300 70 h-22 M420 70 h22 M318 28 l-14 -14 M402 112 l14 14 M402 28 l14 -14 M318 112 l-14 14" stroke="#ffd23f" stroke-width="10" stroke-linecap="round"/></g>
+  <g class="wig"><path d="M30 230 L60 210" stroke="#4a1580" stroke-width="14" stroke-linecap="round"/><path d="M410 230 L380 210" stroke="#4a1580" stroke-width="14" stroke-linecap="round"/>
+  <path d="M50 200 Q220 150 390 200 Q400 270 350 290 Q290 305 245 262 L195 262 Q150 305 90 290 Q40 270 50 200Z" fill="url(#lens2)" ${S}/>
+  <path d="M80 215 L150 205 M280 205 L340 212" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".85"/>
+  <path d="M50 200 Q220 150 390 200" stroke="#ffd23f" stroke-width="12" fill="none" stroke-linecap="round"/></g>
+  <g class="beat"><path d="M110 330 l6 16 l16 6 l-16 6 l-6 16 l-6 -16 l-16 -6 l16 -6z" fill="#ff3e9a"/><path d="M320 340 l5 13 l13 5 l-13 5 l-5 13 l-5 -13 l-13 -5 l13 -5z" fill="#7b2cbf"/></g>`},
+ {name:'Bermuda com bolsos',joke:'reforçados, pra carregar<br>os meus trecos',svg:`
+  <g class="wig"><path d="M70 60 h300 l40 330 h-160 l-30 -200 l-30 200 h-160z" fill="#6a22aa" ${S}/>
+  <rect x="70" y="50" width="300" height="44" rx="10" fill="#ff3e9a" ${S}/>
+  <path d="M220 94 v80" stroke="#4a1580" stroke-width="7"/>
+  <path d="M60 370 h150 M268 370 h150" stroke="#ffd23f" stroke-width="7" stroke-dasharray="14 10"/>
+  <rect x="62" y="186" width="20" height="60" rx="5" fill="#ffd23f" stroke="#4a1580" stroke-width="6" transform="rotate(-12 72 216)"/>
+  <rect x="86" y="178" width="34" height="26" rx="6" fill="#7fd0ff" stroke="#4a1580" stroke-width="6"/>
+  <rect x="50" y="200" width="110" height="110" rx="16" fill="#7b2cbf" ${S}/>
+  <rect x="62" y="212" width="86" height="86" rx="10" fill="none" stroke="#ffd23f" stroke-width="5" stroke-dasharray="10 8"/>
+  <path d="M44 194 h122 v34 q-61 22 -122 0z" fill="#ff3e9a" ${S}/><circle cx="105" cy="222" r="9" fill="#ffd23f" stroke="#4a1580" stroke-width="5"/>
+  <rect x="290" y="200" width="110" height="110" rx="16" fill="#7b2cbf" ${S}/>
+  <rect x="302" y="212" width="86" height="86" rx="10" fill="none" stroke="#ffd23f" stroke-width="5" stroke-dasharray="10 8"/>
+  <path d="M284 194 h122 v34 q-61 22 -122 0z" fill="#ff3e9a" ${S}/><circle cx="345" cy="222" r="9" fill="#ffd23f" stroke="#4a1580" stroke-width="5"/></g>
+  <g class="note"><circle cx="380" cy="130" r="20" fill="none" stroke="#ffd23f" stroke-width="8"/><path d="M394 144 l30 30 m-10 -10 l10 -10 m-2 22 l10 -10" stroke="#ffd23f" stroke-width="8" stroke-linecap="round"/></g>`},
+ {name:'Inscrição em prova',joke:'com medalha,<br>de preferência',svg:`
+  <path d="M130 0 L200 200 L240 200 L170 0Z" fill="#ff3e9a" ${S}/><path d="M310 0 L240 200 L200 200 L270 0Z" fill="#7b2cbf" ${S}/>
+  <g class="swing" style="transform-box:view-box;transform-origin:220px 0px">
+  <circle cx="220" cy="300" r="120" fill="#ffd23f" ${S}/><circle cx="220" cy="300" r="85" fill="#ffe680" ${S} stroke-width="6"/>
+  <path d="M220 240 l18 38 l42 5 l-31 28 l9 41 l-38 -21 l-38 21 l9 -41 l-31 -28 l42 -5z" fill="#fff" ${S} stroke-width="6"/></g>
+  <g class="beat" style="transform-box:fill-box;transform-origin:center"><path d="M380 330 l8 22 l22 8 l-22 8 l-8 22 l-8 -22 l-22 -8 l22 -8z" fill="#fff"/></g>`},
+ {name:'Pernas novas',joke:'pois as atuais estão em uso<br>desde que comecei a andar',svg:`
+  <g class="wig"><rect x="120" y="20" width="80" height="330" rx="40" fill="#cf9a72" ${S}/><rect x="230" y="20" width="80" height="330" rx="40" fill="#cf9a72" ${S}/>
+  <path d="M100 340 h110 v50 h-130 q0 -50 20 -50z" fill="#fff" ${S}/><path d="M220 340 h110 q20 0 20 50 h-130z" fill="#fff" ${S}/>
+  <rect x="80" y="380" width="130" height="22" rx="11" fill="#ffd23f" ${S} stroke-width="6"/><rect x="220" y="380" width="130" height="22" rx="11" fill="#ffd23f" ${S} stroke-width="6"/></g>
+  <g class="swing" style="transform-box:view-box;transform-origin:310px 120px"><path d="M310 120 L350 160" stroke="#4a1580" stroke-width="6"/>
+  <path d="M330 150 h112 l20 40 l-20 40 h-112z" fill="#ffd23f" ${S}/><text x="392" y="199" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="25" fill="#4a1580">1º passo</text></g>`},
+ {name:'Ladeira só de descida',joke:'sei que é ousado, mas o senhor<br>é do ramo de milagres',svg:`
+  <path d="M0 80 L440 400 L0 400Z" fill="#7b2cbf" ${S}/><path d="M0 80 L440 400" stroke="#fff" stroke-width="10" stroke-dasharray="30 22"/>
+  <g class="slide"><circle cx="0" cy="0" r="30" fill="#ff3e9a" ${S} stroke-width="7"/><path d="M-12 -4 q12 14 24 0" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/></g>
+  <g class="beat" style="transform-box:fill-box;transform-origin:center"><path d="M360 60 v120 m-40 -40 l40 40 l40 -40" stroke="#ffd23f" stroke-width="22" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g class="beat"><path d="M110 40 l6 16 l16 6 l-16 6 l-6 16 l-6 -16 l-16 -6 l16 -6z" fill="#ffd23f"/></g>`},
+];
+const IT=$('#items');
+ITEMS.forEach((it,i)=>{
+  const t0=ITEM_START+i*ITEM_DUR, t1=t0+ITEM_DUR;
+  const wrap=document.createElement('div'); wrap.className='abs'; wrap.style.inset='0';
+  wrap.innerHTML=`<div class="abs card"><div class="ill"><svg viewBox="0 0 440 440" width="440" height="440">${it.svg}</svg></div>
+   <div class="name">${it.name}</div><div class="joke">${it.joke}</div></div>
+   <div class="abs num" style="left:60px;top:250px">${i+1}</div>`;
+  IT.appendChild(wrap);
+  const card=wrap.querySelector('.card'), num=wrap.querySelector('.num');
+  // enter from right, exit to left
+  A(card,[{transform:'translateX(1200px) rotate(12deg)',offset:0},{transform:'translateX(0) rotate(-2deg)',offset:.5/ITEM_DUR},
+          {transform:'translateX(0) rotate(0deg)',offset:(ITEM_DUR-.25)/ITEM_DUR},{transform:'translateX(-1200px) rotate(-12deg)',offset:1}],t0,ITEM_DUR,{easing:'ease-out',fill:'none'});
+  A(wrap,[{opacity:1},{opacity:1}],t0,ITEM_DUR,{fill:'none'});
+  wrap.style.opacity=0;
+  A(num,[{transform:'scale(0) rotate(-180deg)'},{transform:'scale(1) rotate(0)'}],t0+.25,.5,{easing:BOUNCE,fill:'none'});
+  A(num,[{transform:'scale(1)'},{transform:'scale(1)'}],t0+.75,ITEM_DUR-.95,{fill:'none'});
+  num.style.transform='scale(0)';
+  A(wrap.querySelector('.name'),[{transform:'scale(.3)',opacity:0},{transform:'scale(1)',opacity:1}],t0+.35,.45,{easing:BOUNCE});
+  A(wrap.querySelector('.joke'),[{transform:'translateY(40px)',opacity:0},{transform:'translateY(0)',opacity:1}],t0+.6,.4,{});
+  const ill=wrap.querySelector('.ill svg');
+  const per=.5, a=t0+.4, b=t1;
+  const sub=(cls,frames,p=per,ease='ease-in-out')=>ill.querySelectorAll('.'+cls).forEach(e=>{e.style.transformBox='fill-box';if(!e.style.transformOrigin)e.style.transformOrigin='center';limbs(e,frames,a,b,p)});
+  sub('wig',[{transform:'rotate(-4deg)'},{transform:'rotate(4deg)'},{transform:'rotate(-4deg)'}],.6);
+  sub('wig2',[{transform:'rotate(5deg)'},{transform:'rotate(-5deg)'},{transform:'rotate(5deg)'}],.6);
+  sub('beat',[{transform:'scale(1)'},{transform:'scale(1.25)'},{transform:'scale(1)'}],.45);
+  sub('puff',[{transform:'translate(0,0) scale(.8)',opacity:1},{transform:'translate(-30px,-60px) scale(1.2)',opacity:0}],.8,'linear');
+  sub('drop',[{transform:'translateY(-30px)',opacity:0},{transform:'translateY(0)',opacity:1,offset:.3},{transform:'translateY(60px)',opacity:0}],.7,'ease-in');
+  sub('drop2',[{transform:'translateY(-40px)',opacity:0},{transform:'translateY(0)',opacity:1,offset:.3},{transform:'translateY(70px)',opacity:0}],.9,'ease-in');
+  sub('note',[{transform:'translate(0,0) rotate(-10deg)'},{transform:'translate(0,-30px) rotate(10deg)'},{transform:'translate(0,0) rotate(-10deg)'}],.6);
+  ill.querySelectorAll('.swing').forEach(e=>limbs(e,[{transform:'rotate(-12deg)'},{transform:'rotate(12deg)'},{transform:'rotate(-12deg)'}],a,b,.9));
+  ill.querySelectorAll('.dash').forEach(e=>limbs(e,[{strokeDashoffset:0},{strokeDashoffset:-68}],a,b,.4));
+  ill.querySelectorAll('.slide').forEach(e=>A(e,[{transform:'translate(20px,70px) rotate(0)'},{transform:'translate(420px,360px) rotate(720deg)'}],t0+.5,1.3,{easing:'cubic-bezier(.5,0,1,1)',fill:'both'}));
+});
+
+
+/* socks change color during item 3 */
+{const t3=ITEM_START+2*ITEM_DUR;
+ document.querySelectorAll('.fancySock').forEach(e=>A(e,[{opacity:0},{opacity:1,offset:.12},{opacity:1,offset:.9},{opacity:0}],t3+.4,ITEM_DUR-.3,{fill:'none',easing:'linear'}));
+ const fx=document.createElement('div');fx.className='abs';fx.style.cssText='left:0;top:0;width:1080px;height:1920px;z-index:3;pointer-events:none';document.body.querySelector('#stage').appendChild(fx);
+ for(let i=0;i<10;i++){const s=26+rnd()*20,ang=i/10*Math.PI*2;const d=document.createElement('div');d.className='abs';
+  d.style.left=(520-s/2)+'px';d.style.top=(1770-s/2)+'px';
+  d.innerHTML=`<svg viewBox="0 0 20 20" width="${s}" height="${s}"><path d="M10 0 L12.5 7.5 L20 10 L12.5 12.5 L10 20 L7.5 12.5 L0 10 L7.5 7.5Z" fill="${['#ffd23f','#fff','#ff8cc6'][i%3]}"/></svg>`;fx.appendChild(d);
+  A(d,[{transform:'translate(0,0) scale(0)',opacity:1},{transform:`translate(${Math.cos(ang)*130}px,${Math.sin(ang)*70-30}px) scale(1) rotate(180deg)`,opacity:1,offset:.6},{transform:`translate(${Math.cos(ang)*160}px,${Math.sin(ang)*90-50}px) scale(.3)`,opacity:0}],t3+.4,.8,{fill:'none'});d.style.opacity=0;}
+}
+/* ---------- SCENE 4 ---------- */
+pop('#s4a',29.2,.6);
+A('#plate',[{transform:'translateY(900px)'},{transform:'translateY(0)'}],29.5,.6,{easing:BOUNCE});
+A('#stamp',[{transform:'rotate(-14deg) scale(4)',opacity:0},{transform:'rotate(-14deg) scale(1)',opacity:1}],30.4,.35,{easing:'cubic-bezier(.5,0,.8,.6)'});
+A('#plate',[{transform:'translate(0,0)'},{transform:'translate(-10px,6px)'},{transform:'translate(10px,-4px)'},{transform:'translate(0,0)'}],30.75,.2,{fill:'none'});
+A('#s4b',[{transform:'scale(0) rotate(-10deg)'},{transform:'scale(1) rotate(0)'}],31.2,.6,{easing:BOUNCE});
+A('#bite',[{r:0},{r:55}],31.7,.2,{easing:'steps(2)'});
+loop('#s4b',[{transform:'scale(1)'},{transform:'scale(1.05)'},{transform:'scale(1)'}],.9,31.8);
+
+/* ---------- SCENE 5 ---------- */
+A('#s5a',[{transform:'translateY(-300px)',opacity:0},{transform:'translateY(0)',opacity:1}],32.7,.6,{easing:BOUNCE});
+A('#sig',[{clipPath:'inset(-80px 100% -80px -80px)'},{clipPath:'inset(-80px -80px -80px -80px)'}],33.3,1.2,{easing:'ease-in-out'});
+loop('#sig',[{transform:'rotate(-2deg) scale(1)'},{transform:'rotate(2deg) scale(1.04)'},{transform:'rotate(-2deg) scale(1)'}],1.2,34.5);
+pop('#s5b',34.6,.6);
+// sparkle burst
+const SP=$('#spk');
+for(let i=0;i<26;i++){
+  const ang=i/26*Math.PI*2, dist=260+rnd()*260, s=28+rnd()*36;
+  const d=document.createElement('div'); d.className='abs'; d.style.left=(540-s/2)+'px'; d.style.top=(640-s/2)+'px';
+  d.innerHTML=`<svg viewBox="0 0 20 20" width="${s}" height="${s}"><path d="M10 0 L12.5 7.5 L20 10 L12.5 12.5 L10 20 L7.5 12.5 L0 10 L7.5 7.5Z" fill="${['#ffd23f','#fff','#ff8cc6','#ffd23f'][i%4]}"/></svg>`;
+  SP.appendChild(d);
+  A(d,[{transform:'translate(0,0) scale(0) rotate(0)',opacity:1},{transform:`translate(${Math.cos(ang)*dist}px,${Math.sin(ang)*dist*1.1}px) scale(1) rotate(180deg)`,opacity:1,offset:.6},{transform:`translate(${Math.cos(ang)*dist*1.2}px,${Math.sin(ang)*dist*1.3+80}px) scale(.4) rotate(300deg)`,opacity:0}],34.4,1.8,{easing:'ease-out'});
+}
+
+/* ---------- seek API ---------- */
+window.DURATION=36.4;
+window.seek=t=>{document.getAnimations().forEach(a=>{a.pause();a.currentTime=t*1000});};
+window.seek(0);
+</script>
+</body></html>
