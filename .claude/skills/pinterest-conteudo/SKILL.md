@@ -19,12 +19,16 @@ python3 scripts/pinterest.py rss <usuario> [pasta] --download refs/        # pas
 python3 scripts/pinterest.py pin <url_ou_id_do_pin>   # um pin específico
 ```
 
+**Conta da Liana:** usuário `lianadiasandrad`, pasta principal `nutri` (pública) → `python3 scripts/pinterest.py rss lianadiasandrad nutri --download <scratchpad>/refs-nutri`.
+O @ do link nem sempre é o nome que aparece no perfil. Se receber um link curto `pin.it/...`, descubra o endereço real seguindo os redirecionamentos (`curl -s -o /dev/null -w '%{redirect_url}' <link>`, repetindo no resultado) e use o trecho `/<usuario>/<pasta>/` da URL final.
+Para analisar muitos pins de uma vez, monte um painel com as miniaturas (Pillow) e abra uma única imagem.
+
 Modos, em ordem de preferência:
 1. **API oficial (v5)** — acessa pastas públicas e secretas. Precisa de um token de acesso do Pinterest com escopos `boards:read` e `pins:read`. Na nuvem do Claude Code o token fica salvo como *segredo de rede* do ambiente para o host `api.pinterest.com` (o proxy injeta o cabeçalho; o script manda um valor fictício). Localmente, exporte `PINTEREST_TOKEN`.
 2. **RSS público** — `pinterest.com/<usuario>/<pasta>.rss`. Sem token, só pastas públicas, até ~25 pins recentes.
 3. **Sem acesso à rede** — peça à usuária os links dos pins ou que envie as imagens (prints) e siga do passo 2.
 
-Hosts necessários na rede do ambiente: `api.pinterest.com`, `www.pinterest.com`, `br.pinterest.com`, `i.pinimg.com`. Se o script responder erro de proxy/host bloqueado, diga isso à usuária e ofereça liberar os hosts (ferramentas de ambiente) em vez de inventar referências.
+Hosts necessários na rede do ambiente: `api.pinterest.com`, `www.pinterest.com`, `br.pinterest.com`, `i.pinimg.com`, `pin.it` (links curtos). Se o script responder erro de proxy/host bloqueado, diga isso à usuária e ofereça liberar os hosts (ferramentas de ambiente) em vez de inventar referências.
 
 Guarde as imagens baixadas no scratchpad da sessão (não no repositório do site).
 
