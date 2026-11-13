@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Carrossel — Liana Dias Nutri</title>
+<!--
+  Modelo de carrossel/imagem única. Um <section class="slide"> = um PNG.
+  FONT_DIR é trocado automaticamente pelo render.js pela pasta assets/fonts do repositório.
+  Formatos: 1080x1350 (feed 4:5) · 1080x1080 (quadrado) · 1080x1920 (story/capa de Reels) → mude --w/--h.
+  Variações de slide: .slide (creme) · .slide.escuro (vinho profundo) · .slide.vinho
+-->
+<style>
+  @font-face { font-family: "Cormorant Garamond"; font-weight: 500; src: url("FONT_DIR/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Cormorant Garamond"; font-weight: 600; src: url("FONT_DIR/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Cormorant Garamond"; font-weight: 500; font-style: italic; src: url("FONT_DIR/cormorant-garamond-latin-500-italic.woff2") format("woff2"); }
+  @font-face { font-family: "Manrope"; font-weight: 200 800; src: url("FONT_DIR/manrope-latin-wght-normal.woff2") format("woff2"); }
+
+  :root {
+    --w: 1080px; --h: 1350px; --m: 96px;
+    --creme: #F4EFE7; --marfim: #FBF8F3; --vinho: #873F42; --vinho-profundo: #4A2326;
+    --terracota: #B66D52; --rose: #B76E79; --rose-claro: #E4AEB4; --dourado: #C5A36B;
+    --dourado-claro: #E3CFA6; --texto-suave: #7A5054;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Manrope", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #ccc; display: grid; gap: 40px; justify-content: center; padding: 40px 0; }
+
+  .slide {
+    width: var(--w); height: var(--h); position: relative; overflow: hidden;
+    background: var(--creme); color: var(--vinho-profundo);
+    padding: var(--m); display: flex; flex-direction: column; justify-content: center; gap: 40px;
+    font-family: var(--sans);
+  }
+  .slide.escuro { background: var(--vinho-profundo); color: var(--creme); }
+  .slide.vinho  { background: var(--vinho); color: var(--creme); }
+
+  /* moldura fina e numeração */
+  .slide::before { content: ""; position: absolute; inset: 40px; border: 1.5px solid rgba(183,110,121,.42); pointer-events: none; }
+  .escuro::before, .vinho::before { border-color: rgba(197,163,107,.45); }
+  .num { position: absolute; top: 64px; right: 72px; font-size: 22px; letter-spacing: .2em; color: var(--texto-suave); }
+  .escuro .num { color: var(--dourado); } .vinho .num { color: var(--dourado-claro); }
+
+  .rotulo { font-size: 24px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--vinho); }
+  .escuro .rotulo { color: var(--dourado); } .vinho .rotulo { color: var(--dourado-claro); }
+
+  h1 { font-family: var(--serif); font-weight: 500; font-size: 104px; line-height: 1.02; letter-spacing: -.01em; }
+  h2 { font-family: var(--serif); font-weight: 500; font-size: 76px; line-height: 1.08; }
+  h1 em, h2 em { font-style: italic; color: var(--vinho); }
+  .escuro h1 em, .escuro h2 em { color: var(--rose-claro); }
+  .vinho h1 em, .vinho h2 em { color: var(--dourado-claro); }
+
+  p { font-size: 36px; line-height: 1.5; max-width: 44ch; }
+  .escuro p { color: #EADFD3; }
+  .filete { width: 120px; height: 2px; background: var(--dourado); }
+
+  .lista { list-style: none; display: grid; gap: 26px; font-size: 34px; line-height: 1.4; }
+  .lista li { display: grid; grid-template-columns: 56px 1fr; align-items: baseline; }
+  .lista li::before { content: counter(item, decimal-leading-zero); counter-increment: item; font-family: var(--serif); font-style: italic; font-size: 40px; color: var(--terracota); }
+  .escuro .lista li::before { color: var(--dourado); }
+  .lista { counter-reset: item; }
+
+  .assinatura { position: absolute; bottom: 64px; left: var(--m); right: var(--m); display: flex; justify-content: space-between; align-items: center;
+    font-size: 22px; letter-spacing: .18em; text-transform: uppercase; color: var(--texto-suave); }
+  .escuro .assinatura { color: var(--dourado); } .vinho .assinatura { color: var(--dourado-claro); }
+  .assinatura b { font-family: var(--serif); font-size: 30px; letter-spacing: .04em; text-transform: none; font-weight: 600; }
+
+  .cta { align-self: flex-start; background: var(--dourado); color: var(--vinho-profundo); font-weight: 700; font-size: 26px;
+    letter-spacing: .18em; text-transform: uppercase; padding: 26px 44px; }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<section class="slide escuro">
+  <span class="num">01/04</span>
+  <span class="rotulo">Saúde metabólica</span>
+  <h1>Fome à noite <em>não é</em> falta de força de vontade</h1>
+  <div class="filete"></div>
+  <p>Arraste para entender o que está por trás.</p>
+  <div class="assinatura"><b>Liana Dias</b><span>Nutricionista</span></div>
+</section>
+
+<!-- DESENVOLVIMENTO -->
+<section class="slide">
+  <span class="num">02/04</span>
+  <span class="rotulo">O que acontece</span>
+  <h2>Pular refeições durante o dia <em>cobra a conta</em> à noite</h2>
+  <p>Longos intervalos sem comer aumentam a fome e a vontade por alimentos mais calóricos no fim do dia.</p>
+  <div class="assinatura"><b>Liana Dias</b><span>@liana.diasnutri</span></div>
+</section>
+
+<section class="slide">
+  <span class="num">03/04</span>
+  <span class="rotulo">Na prática</span>
+  <h2>Três ajustes <em>simples</em></h2>
+  <ul class="lista">
+    <li>Café da manhã com proteína</li>
+    <li>Lanche planejado à tarde</li>
+    <li>Jantar com fibras e proteína</li>
+  </ul>
+  <div class="assinatura"><b>Liana Dias</b><span>@liana.diasnutri</span></div>
+</section>
+
+<!-- CTA -->
+<section class="slide vinho">
+  <span class="num">04/04</span>
+  <span class="rotulo">Vamos juntas?</span>
+  <h2>Um plano feito <em>para a sua rotina</em></h2>
+  <p>Agende sua consulta pelo link na bio.</p>
+  <span class="cta">Agendar consulta</span>
+  <div class="assinatura"><b>Liana Dias</b><span>Nutricionista</span></div>
+</section>
+
+</body>
+</html>
