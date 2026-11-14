@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:"Cormorant Garamond";src:url(../../assets/fonts/cormorant-garamond-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:"Cormorant Garamond";src:url(../../assets/fonts/cormorant-garamond-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:"Cormorant Garamond";src:url(../../assets/fonts/cormorant-garamond-latin-500-italic.woff2);font-weight:500;font-style:italic}
+@font-face{font-family:"Manrope";src:url(../../assets/fonts/manrope-latin-wght-normal.woff2);font-weight:200 800}
+:root{--creme:#F4EFE7;--marfim:#FBF8F3;--vinho:#873F42;--vp:#4A2326;--terracota:#B66D52;--dourado:#C5A36B;--dc:#E3CFA6;--suave:#7A5054;--rc:#E4AEB4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ddd}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--creme);color:var(--vp);font-family:Manrope,sans-serif;padding:110px 96px 120px;display:flex;flex-direction:column}
+.s.dark{background:var(--vp);color:var(--creme)}
+.s::before{content:"";position:absolute;inset:40px;border:1.5px solid rgba(197,163,107,.55);pointer-events:none}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:22px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--suave);margin-bottom:70px}
+.dark .top{color:var(--dc)}
+.top img{width:64px;height:64px}
+.foot{position:absolute;left:96px;right:96px;bottom:72px;display:flex;justify-content:space-between;font-size:21px;letter-spacing:.12em;color:var(--suave);font-weight:600}
+.dark .foot{color:var(--dc)}
+.k{font-size:24px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--vinho);margin-bottom:28px}
+.dark .k{color:var(--dourado)}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:600;line-height:1.02;letter-spacing:-.01em}
+h1{font-size:128px}
+h2{font-size:84px;margin-bottom:44px}
+em{font-style:italic;font-weight:500;color:var(--vinho)}
+.dark em{color:var(--rc)}
+p{font-size:36px;line-height:1.45}
+p+p{margin-top:26px}
+b{font-weight:700}
+.rule{width:120px;height:2px;background:var(--dourado);margin:44px 0}
+.big{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:200px;line-height:1;color:var(--vinho)}
+ul{list-style:none}
+li{font-size:34px;line-height:1.4;padding:24px 0 24px 56px;border-top:1px solid rgba(74,35,38,.14);position:relative}
+li:last-child{border-bottom:1px solid rgba(74,35,38,.14)}
+li::before{content:"";position:absolute;left:4px;top:42px;width:22px;height:2px;background:var(--terracota)}
+.dark li{border-color:rgba(227,207,166,.25)}
+table{width:100%;border-collapse:collapse;font-size:31px}
+td{padding:20px 0;border-top:1px solid rgba(74,35,38,.14)}
+tr:last-child td{border-bottom:1px solid rgba(74,35,38,.14)}
+td:first-child{color:var(--suave);font-weight:700;font-size:22px;letter-spacing:.16em;text-transform:uppercase;width:200px}
+td:last-child{text-align:right;font-weight:700;color:var(--vinho);white-space:nowrap}
+.note{font-size:24px;line-height:1.45;color:var(--suave);margin-top:auto}
+.dark .note{color:var(--dc)}
+.box{background:var(--marfim);border-left:4px solid var(--vinho);padding:36px 40px;margin-top:36px}
+.box p{font-size:32px}
+.photo{position:absolute;right:96px;top:600px;width:380px;height:560px;object-fit:cover;object-position:top;outline:1.5px solid var(--dourado);outline-offset:14px}
+.swipe{margin-top:auto;font-size:24px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--vinho)}
+.dark .swipe{color:var(--dourado)}
+</style></head><body>
+
+<!-- 1 CAPA -->
+<section class="s">
+  <div class="top"><span>Composição corporal</span><img src="../../assets/img/monograma-ld-160.webp" alt=""></div>
+  <div class="k">Depois dos 35</div>
+  <h1>A balança pode não mudar <em>e você estar perdendo músculo.</em></h1>
+  <div class="rule"></div>
+  <p style="max-width:800px;font-size:40px">O que a ciência mostra sobre massa muscular na vida adulta, e o que fazer a partir de hoje.</p>
+  <div class="swipe">Arraste →</div>
+  <div class="foot"><span>@lianadias.nutri</span><span>01 / 09</span></div>
+</section>
+
+<!-- 2 O QUE ACONTECE -->
+<section class="s">
+  <div class="top"><span>O que acontece</span><img src="../../assets/img/monograma-ld-160.webp" alt=""></div>
+  <div class="big">3 a 8%</div>
+  <p style="margin-top:10px"><b>de massa muscular por década</b> é a perda estimada a partir dos 30 anos em adultos sem estímulo adequado. Depois dos 60, o ritmo acelera.</p>
+  <div class="rule"></div>
+  <p>E a <b>força</b> costuma cair mais rápido que a massa. Por isso, músculo se constrói antes de precisar dele.</p>
+  <p class="note">Volpi E et al. Curr Opin Clin Nutr Metab Care, 2004.</p>
+  <div class="foot"><span>@lianadias.nutri</span><span>02 / 09</span></div>
+</section>
+
+<!-- 3 POR QUE IMPORTA -->
+<section class="s dark">
+  <div class="top"><span>Por que importa</span><img src="../../assets/img/monograma-ld-160.webp" alt=""></div>
+  <h2>Músculo não é só estética. <em>É órgão metabólico.</em></h2>
+  <ul>
+    <li>Principal destino da glicose após as refeições: <b>aliado direto contra a resistência à insulina</b></li>
+    <li>Sustenta força, postura, equilíbrio e autonomia</li>
+    <li>Protege ossos e articulações</li>
+    <li>Ajuda a manter o peso perdido</li>
+  </ul>
+  <div class="foot"><span>@lianadias.nutri</span><span>03 / 09</span></div>
+</section>
+
+<!-- 4 A IDADE NAO E A UNICA -->
+<section class="s">
+  <div class="top"><span>O ponto cego</span><img src="../../assets/img/monograma-ld-160.webp" alt=""></div>
+  <h2>A idade pesa. <em>Mas raramente é a única causa.</em></h2>
+  <ul>
+    <li>Pouco ou nenhum treino de força</li>
+    <li>Proteína insuficiente ou concentrada só no almoço</li>
+    <li>Dietas restritivas repetidas, que levam músculo junto</li>
+    <li>Sono curto e estresse crônico</li>
+    <li>Queda de estrogênio na perimenopausa</li>
+  </ul>
+  <p style="margin-top:40px">A boa notícia: <b>quase tudo isso é modificável.</b></p>
+  <div class="foot"><span>@lianadias.nutri</span><span>04 / 09</span></div>
+</section>
+
+<!-- 5 TREINO -->
+<section class="s">
+  <div class="top"><span>Pilar 1</span><img src="../../assets/img/monograma-ld-160.webp" alt=""></div>
+  <div class="k">O estímulo</div>
+  <h2>Treino de força <em>vem primeiro.</em></h2>
+  <p>Sem estímulo mecânico, nenhuma proteína ou suplemento constrói músculo.</p>
+  <div class="box">
+    <p><b>2 a 3 vezes por semana</b>, grandes grupos musculares e <b>progressão de carga</b> ao longo do tempo.</p>
+  </div>
+  <p style="margin-top:36px">Caminhada e corrida fazem bem ao coração, mas <b>não substituem</b> a musculação.</p>
+  <p class="note">Orientação do treino: profissional de Educação Física.</p>
+  <div class="foot"><span>@lianadias.nutri</span><span>05 / 09</span></div>
+</section>
+
+<!-- 6 PROTEINA -->
+<section class="s">
+  <div class="top"><span>Pilar 2</span><img src="../../assets/img/monograma-ld-160.webp" alt=""></div>
+  <div class="k">A matéria-prima</div>
+  <h2>Proteína: <em>quanto e como.</em></h2>
+  <p>Para quem treina, a evidência aponta para <b>1,2 a 1,6 g por kg de peso ao dia</b>, distribuídos em <b>3 a 4 refeições</b> de 25 a 40 g.</p>
+  <div class="box"><p>Mulher de 65 kg: <b>cerca de 80 a 105 g de proteína por dia.</b></p></div>
+  <p class="note">A meta é individual. Doença renal ou outras condições exigem avaliação.<br>Morton RW et al. Br J Sports Med, 2018 · Schoenfeld BJ, Aragon AA. JISSN, 2018.</p>
+  <div class="foot"><span>@lianadias.nutri</span><span>06 / 09</span></div>
+</section>
+
+<!-- 7 NA PRATICA -->
+<section class="s">
+  <div class="top"><span>Na prática</span><img src="../../assets/img/monograma-ld-160.webp" alt=""></div>
+  <h2>Um dia com <em>proteína bem distribuída</em></h2>
+  <table>
+    <tr><td>Café</td><td style="font-size:31px">2 ovos + iogurte natural + aveia</td><td>~25 g</td></tr>
+    <tr><td>Almoço</td><td style="font-size:31px">120 g de frango + feijão</td><td>~40 g</td></tr>
+    <tr><td>Lanche</td><td style="font-size:31px">Iogurte proteico ou whey</td><td>~20 g</td></tr>
+    <tr><td>Jantar</td><td style="font-size:31px">120 g de peixe + legumes</td><td>~30 g</td></tr>
+  </table>
+  <p style="margin-top:44px">Total: <b>~115 g</b>. O erro mais comum é um café da manhã com quase nenhuma proteína.</p>
+  <p class="note">Valores aproximados. Quantidades dependem do seu peso, rotina e objetivo.</p>
+  <div class="foot"><span>@lianadias.nutri</span><span>07 / 09</span></div>
+</section>
+
+<!-- 8 EMAGRECER -->
+<section class="s dark">
+  <div class="top"><span>Atenção ao emagrecer</span><img src="../../assets/img/monograma-ld-160.webp" alt=""></div>
+  <h2>Perder peso <em>não é o mesmo</em> que perder gordura.</h2>
+  <p>Em dietas sem treino de força, <b>cerca de um quarto do peso perdido pode ser massa magra.</b> Isso vale também para quem usa medicamentos para emagrecer.</p>
+  <div class="rule"></div>
+  <p>Por isso, o acompanhamento precisa olhar <b>composição corporal</b>, não só o número da balança.</p>
+  <p class="note">Weinheimer EM et al. Nutr Rev, 2010.</p>
+  <div class="foot"><span>@lianadias.nutri</span><span>08 / 09</span></div>
+</section>
+
+<!-- 9 CTA -->
+<section class="s">
+  <div class="top"><span>Para levar</span><img src="../../assets/img/monograma-ld-160.webp" alt=""></div>
+  <h2 style="max-width:560px">Músculo é <em>investimento</em> em saúde.</h2>
+  <ul style="max-width:460px">
+    <li>Treino de força</li>
+    <li>Proteína em toda refeição</li>
+    <li>Sono e constância</li>
+  </ul>
+  <p style="margin-top:44px;max-width:500px;font-size:32px"><b>Salve</b> este post e envie para quem precisa ler.</p>
+  <p style="max-width:470px;font-size:28px;color:var(--suave)">Quer um plano para a sua composição corporal? Agende pelo link da bio.</p>
+  <img class="photo" src="../../assets/img/liana-dias-nutricionista-800.webp" alt="">
+  <div class="foot"><span>Liana Dias · Nutricionista · CRN-4 26102908</span><span>09 / 09</span></div>
+</section>
+</body></html>
