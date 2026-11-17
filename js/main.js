@@ -197,8 +197,12 @@ if (quiz) {
   };
 
   // Avança ao clicar (mouse, toque, Espaço) ou com Enter; as setas só trocam a opção marcada
-  let arrowAt = 0;
-  const advance = () => setTimeout(() => (current < steps.length - 1 ? show(current + 1) : finish()), 320);
+  let arrowAt = 0, pending;
+  // Trocar de opção antes de avançar reinicia a espera, em vez de avançar duas vezes
+  const advance = () => {
+    clearTimeout(pending);
+    pending = setTimeout(() => (current < steps.length - 1 ? show(current + 1) : finish()), 320);
+  };
   form.addEventListener("keydown", (e) => {
     if (e.key.startsWith("Arrow")) arrowAt = Date.now();
     if (e.key === "Enter" && e.target.matches("input[type=radio]:checked")) {
@@ -211,8 +215,9 @@ if (quiz) {
     advance();
   });
   form.addEventListener("submit", (e) => e.preventDefault());
-  back.addEventListener("click", () => show(Math.max(0, current - 1)));
+  back.addEventListener("click", () => { clearTimeout(pending); show(Math.max(0, current - 1)); });
   quiz.querySelector(".quiz-restart").addEventListener("click", () => {
+    clearTimeout(pending);
     form.reset();
     show(0);
     steps[0].querySelector("input").focus({ preventScroll: true });
