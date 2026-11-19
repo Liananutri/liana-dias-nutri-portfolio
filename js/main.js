@@ -171,9 +171,9 @@ if (quiz) {
   const form = quiz.querySelector(".quiz-form");
   const RESULTS = [
     { title: "Consulta avulsa", text: "Um bom ponto de partida para quem busca orientação pontual e um plano alimentar individualizado." },
-    { title: "Acompanhamento trimestral", text: "Três meses para iniciar a mudança de hábitos, com retornos e ajustes próximos ao longo do processo." },
-    { title: "Acompanhamento semestral", text: "Seis meses para consolidar hábitos, sair do ciclo de restrição e ganhar autonomia nas escolhas." },
-    { title: "Acompanhamento anual", text: "Doze meses de apoio contínuo para manter a constância nas diferentes fases da rotina." },
+    { title: "Programa Essencial · 3 meses", text: "Três meses para iniciar a mudança de hábitos, com retornos e ajustes próximos ao longo do processo." },
+    { title: "Programa Essencial · 6 meses", text: "Seis meses para consolidar hábitos, sair do ciclo de restrição e ganhar autonomia nas escolhas." },
+    { title: "Programa Essencial · 12 meses", text: "Doze meses de apoio contínuo para manter a constância nas diferentes fases da rotina." },
   ];
   let current = 0;
 
