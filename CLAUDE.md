@@ -27,9 +27,9 @@ Site estático de uma página, sem build e sem dependências. Ver `README.md` pa
 - Ao mudar textos de posicionamento, atualize também `<title>`, `meta description`, Open Graph e o JSON-LD.
 - Ao mudar o número do WhatsApp, atualize os três lugares indicados no `README.md`.
 
-## Pendência conhecida
-O site ainda comunica só "nutrição comportamental" (hero, meta description, Open Graph, faixa de palavras, seção Abordagem e Conteúdos).
-Ele precisa ser alinhado ao eixo clínico, com o comportamental como complemento.
+## Histórico de posicionamento
+Em nov/2026 o site foi realinhado de "nutrição comportamental" para "nutrição clínica com olhar comportamental".
+Não volte a usar "nutrição comportamental" como posicionamento principal.
 
 ## Testar
 `python3 -m http.server 8000` e abra http://localhost:8000 (com `file://` as fontes não carregam).
