@@ -44,7 +44,7 @@ Formats: 9:16 (1080 x 1920, default), 1:1 (1080 x 1080), 16:9 (1920 x 1080). Def
 |---|---|
 | `SKILL.md` | the step by step workflow Claude follows |
 | `template.html` | a 2 second example page that shows the seek contract (`window.FILM`, `window.seek(f)`) |
-| `template-audio.html` | an example sound page (music bed plus a whoosh, made with Web Audio) |
+| `template-audio.html` | an example sound page (music bed plus a soft hit on a hard cut, made with Web Audio) |
 | `scripts/render.mjs` | renders a page to MP4, an audio page to WAV, and joins parts with the sound |
 | `scripts/sheet.mjs` | makes a contact sheet (one frame every 0.5 s) or a single still for checking |
 | `scripts/package.json` | the one dependency: Playwright 1.65.1 |

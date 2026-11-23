@@ -22,10 +22,10 @@
 const FILM = { width: 1080, height: 1920, fps: 30, frames: 60 }; // 2 s
 window.FILM = FILM;
 
-// Shot table: start and end in seconds. Shots hand over by motion, never by a fade.
+// Shot table: start and end in seconds. Hard cuts only: shots never overlap, no zoom, spin or fade.
 const SHOTS = [
-  { name: 'moon rises', start: 0.0, end: 1.2 },
-  { name: 'push into the lake', start: 1.0, end: 2.0 }, // overlaps: the camera push carries us in
+  { name: 'moon rises', start: 0.0, end: 1.0 },
+  { name: 'lake reflections (hard cut)', start: 1.0, end: 2.0 },
 ];
 
 // Seeded randomness: the same seed gives the same stars on every frame and every render.
@@ -57,13 +57,10 @@ function draw(f) {
   const k = canvas.width / FILM.width;
   ctx.setTransform(k, 0, 0, k, 0, 0);
 
-  // Camera: a slow drift all the time, plus the push of shot 2.
-  const push = easeInOut(local(t, SHOTS[1]));
-  const zoom = 1 + 0.02 * Math.sin(t * 0.9) + 0.9 * push;
-  const camY = 40 * Math.sin(t * 0.7) - 620 * push;
-  ctx.translate(540, 960);
-  ctx.scale(zoom, zoom);
-  ctx.translate(-540 + 12 * Math.sin(t * 1.3), -960 + camY);
+  // Camera: a slow pan drift (translation only, never zoom). Shot 2 is a hard cut to a lower framing.
+  const shot2 = t >= SHOTS[1].start;
+  const camY = 40 * Math.sin(t * 0.7) - (shot2 ? 620 : 0);
+  ctx.translate(12 * Math.sin(t * 1.3), camY);
 
   // Sky: a lit gradient, not a flat fill.
   const sky = ctx.createLinearGradient(0, 0, 0, 1920);
@@ -78,7 +75,7 @@ function draw(f) {
   }
   ctx.globalAlpha = 1;
 
-  // Moon rises with an overshoot, then breathes.
+  // Moon rises with a plain ease (no overshoot), then breathes.
   const rise = easeInOut(local(t, SHOTS[0]));
   const my = 1250 - 700 * rise + 8 * Math.sin(t * 2);
   const glow = ctx.createRadialGradient(540, my, 40, 540, my, 420);
@@ -97,7 +94,7 @@ function draw(f) {
     ctx.lineTo(1680, 2600); ctx.lineTo(-600, 2600); ctx.closePath(); ctx.fill();
   }
 
-  // Lake with moving reflections: shot 2 pushes the camera down into it.
+  // Lake with moving reflections: shot 2 cuts straight to it.
   const lake = ctx.createLinearGradient(0, 1700, 0, 2400);
   lake.addColorStop(0, '#1d2b5e'); lake.addColorStop(1, '#05081a');
   ctx.fillStyle = lake; ctx.fillRect(-600, 1700, 2280, 900);

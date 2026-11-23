@@ -9,7 +9,7 @@
 // Put the cue times (shot starts, hits) in the same timeline the picture uses, so sound lands on motion.
 
 window.FILM = { fps: 30, frames: 60 };
-const CUES = [ { t: 1.0, kind: 'whoosh' } ]; // shot 2 push in the picture template
+const CUES = [ { t: 1.0, kind: 'hit' } ]; // soft hit on the hard cut to shot 2 (no whooshes)
 
 function noiseBuffer(ctx, seconds, seed = 1) {
   const b = ctx.createBuffer(1, Math.ceil(seconds * ctx.sampleRate), ctx.sampleRate);
@@ -38,19 +38,22 @@ function pad(ctx, out, freq, t0, t1) {
   }
 }
 
-function whoosh(ctx, out, t) {
-  const src = ctx.createBufferSource();
-  src.buffer = noiseBuffer(ctx, 0.8, 99);
-  const bp = ctx.createBiquadFilter();
-  bp.type = 'bandpass'; bp.Q.value = 1.2;
-  bp.frequency.setValueAtTime(300, t);
-  bp.frequency.exponentialRampToValueAtTime(3500, t + 0.5);
+function hit(ctx, out, t) {
+  // Soft hit for a cut: a short sine drop plus a quiet noise click.
+  const o = ctx.createOscillator();
+  o.type = 'sine';
+  o.frequency.setValueAtTime(180, t);
+  o.frequency.exponentialRampToValueAtTime(55, t + 0.25);
   const g = ctx.createGain();
-  g.gain.setValueAtTime(0, t);
-  g.gain.linearRampToValueAtTime(0.5, t + 0.35);
-  g.gain.exponentialRampToValueAtTime(0.001, t + 0.8);
-  src.connect(bp); bp.connect(g); g.connect(out);
-  src.start(t);
+  g.gain.setValueAtTime(0.45, t);
+  g.gain.exponentialRampToValueAtTime(0.001, t + 0.35);
+  o.connect(g); g.connect(out); o.start(t); o.stop(t + 0.4);
+  const n = ctx.createBufferSource();
+  n.buffer = noiseBuffer(ctx, 0.03, 99);
+  const ng = ctx.createGain();
+  ng.gain.setValueAtTime(0.12, t);
+  ng.gain.exponentialRampToValueAtTime(0.001, t + 0.03);
+  n.connect(ng); ng.connect(out); n.start(t);
 }
 
 window.renderAudio = async (sampleRate, seconds) => {
@@ -59,7 +62,7 @@ window.renderAudio = async (sampleRate, seconds) => {
   master.gain.value = 0.9;
   master.connect(ctx.destination);
   for (const f of [110, 164.81, 220, 277.18]) pad(ctx, master, f, 0, seconds); // A major add9 feel
-  for (const c of CUES) if (c.kind === 'whoosh') whoosh(ctx, master, c.t);
+  for (const c of CUES) if (c.kind === 'hit') hit(ctx, master, c.t);
   return ctx.startRendering();
 };
 </script>
