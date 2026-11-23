@@ -107,20 +107,14 @@ if (finePointer && !reduceMotion) {
   });
   hero.addEventListener("pointerleave", () => layers.forEach((el) => (el.style.transform = "")));
 
-  // Inclinação e brilho nos cards de serviço
+  // Brilho que acompanha o cursor nos cards de serviço (cards sempre retos, sem inclinação)
   document.querySelectorAll(".service-card").forEach((card) => {
     card.addEventListener("pointermove", (e) => {
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width;
       const y = (e.clientY - r.top) / r.height;
-      card.style.setProperty("--ry", `${((x - 0.5) * 6).toFixed(2)}deg`);
-      card.style.setProperty("--rx", `${((0.5 - y) * 6).toFixed(2)}deg`);
       card.style.setProperty("--px", `${(x * 100).toFixed(1)}%`);
       card.style.setProperty("--py", `${(y * 100).toFixed(1)}%`);
-    });
-    card.addEventListener("pointerleave", () => {
-      card.style.removeProperty("--rx");
-      card.style.removeProperty("--ry");
     });
   });
 

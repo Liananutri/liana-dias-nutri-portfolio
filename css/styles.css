@@ -296,7 +296,7 @@ address { font-style: normal; }
 .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 .service-card {
   position: relative; overflow: hidden; display: flex; flex-direction: column;
-  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px));
+  transform: translateY(var(--lift, 0px));
   background: var(--marfim); padding: 2.25rem 1.75rem 2rem;
   border: 1px solid var(--linha-suave); border-top: 2px solid var(--dourado);
   transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease);
