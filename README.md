@@ -9,7 +9,7 @@ index.html            todo o conteúdo, com as seções comentadas
 css/styles.css        cores, fontes e layout (tokens no topo, em :root)
 js/main.js            menu do celular, animações e links do WhatsApp
 assets/img/           foto, logo, monograma e imagem de compartilhamento
-assets/fonts/         Cormorant Garamond e Manrope (hospedadas no próprio site)
+assets/fonts/         Lora e Poppins (hospedadas no próprio site, licença SIL OFL)
 assets/icons/         favicon e ícone para iPhone
 robots.txt, sitemap.xml
 ```
@@ -41,7 +41,8 @@ Ao ligar um domínio próprio, substitua `https://liananutri.github.io/liana-dia
 
 ## Acessibilidade e cores
 
-Paleta: vinho `#873F42`, terracota `#B66D52`, rosé dourado `#B76E79`, dourado `#C5A36B` e creme `#F4EFE7`, com o vinho profundo `#4A2326` (tom escuro do vinho) para o texto.
-Contraste conferido sobre o creme: vinho profundo 11,8:1 · vinho 6,5:1 · texto secundário `#7A5054` 5,9:1.
+Paleta (Cérebro da Marca, Notion): vinho `#3B0F1B`, vinho profundo `#4A1728`, texto `#2A0A13`, terracota `#C1694F`, rosé dourado `#B76E79`, dourado `#E8C877`, creme `#FDF6ED` e marfim `#FBF8F3`. Tipografia: Lora itálico nos títulos e Poppins no texto.
+Os tons `--rose-claro`, `--rose-palido`, `--dourado-claro` e `--texto-suave` são derivados, só para texto legível sobre fundos escuros ou como texto secundário.
+Contraste conferido sobre o creme: texto 17:1 · vinho 15,4:1 · vinho profundo 13,6:1 · texto secundário `#6E3A4A` 8,3:1. Dourado sobre o vinho profundo: 9:1.
 Terracota (3,5:1), rosé dourado (3,3:1) e dourado (2,1:1) são usados só em linhas, ornamentos e detalhes sobre o creme. O dourado aparece como texto apenas sobre o vinho profundo (5,7:1).
 As animações são desativadas quando o sistema está configurado para reduzir movimento.

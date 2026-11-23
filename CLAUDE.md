@@ -21,8 +21,8 @@ Site estático de uma página, sem build e sem dependências. Ver `README.md` pa
 - **Ética (Res. CFN nº 599/2018):** sem antes e depois, sem promessa de resultado e sem termos milagrosos ("detox", "seque", "queime gordura"). Depoimentos só reais e com autorização por escrito.
 - **Preços não aparecem no site.** Valores apenas pelo WhatsApp.
 - **Não invente dados** (formação, números, depoimentos, títulos). O que não estiver no Notion, pergunte.
-- **Contraste:** texto em vinho profundo `#4A2326`. Dourado, terracota e rosé só em detalhes sobre o creme; dourado como texto só sobre o vinho profundo.
-- **Fontes:** Cormorant Garamond (títulos) e Manrope (texto), hospedadas em `assets/fonts/`.
+- **Contraste:** texto em `#2A0A13` (títulos em vinho profundo `#4A1728`). Dourado, terracota e rosé só em detalhes sobre o creme; dourado como texto só sobre o vinho profundo.
+- **Fontes:** Lora itálico (títulos) e Poppins (texto), hospedadas em `assets/fonts/`.
 - Mantenha `prefers-reduced-motion`, o layout responsivo e os textos alternativos das imagens.
 - Ao mudar textos de posicionamento, atualize também `<title>`, `meta description`, Open Graph e o JSON-LD.
 - Ao mudar o número do WhatsApp, atualize os três lugares indicados no `README.md`.
@@ -30,6 +30,7 @@ Site estático de uma página, sem build e sem dependências. Ver `README.md` pa
 ## Histórico de posicionamento
 Em nov/2026 o site foi realinhado de "nutrição comportamental" para "nutrição clínica com olhar comportamental".
 Não volte a usar "nutrição comportamental" como posicionamento principal.
+Em nov/2026 a identidade visual do site foi alinhada à do Notion (paleta e fontes Lora/Poppins), que é a versão final.
 
 ## Testar
 `python3 -m http.server 8000` e abra http://localhost:8000 (com `file://` as fontes não carregam).
