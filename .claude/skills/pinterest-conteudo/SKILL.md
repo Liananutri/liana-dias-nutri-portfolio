@@ -49,7 +49,7 @@ Fonte da verdade: `css/styles.css` e `README.md` do repositório do site.
 - Cores: creme `#F4EFE7`, marfim `#FBF8F3`, vinho `#873F42`, vinho profundo `#4A2326` (texto), terracota `#B66D52`, rosé dourado `#B76E79`, dourado `#C5A36B`, dourado claro `#E3CFA6`, rosé claro `#E4AEB4`, texto suave `#7A5054`.
 - Contraste: sobre creme, texto só em vinho profundo, vinho ou `#7A5054`. Dourado como texto **apenas** sobre vinho profundo. Terracota/rosé/dourado sobre creme só em linhas e ornamentos.
 - Fontes: **Cormorant Garamond** (títulos, itálico para ênfase) e **Manrope** (corpo, rótulos em caixa alta espaçada). Arquivos em `assets/fonts/`.
-- Assinatura: `@liana.diasnutri` ou monograma `assets/img/monograma-ld-320.webp` — confirme o @ com a usuária na primeira vez.
+- Assinatura: `@lianadias.nutri` ou monograma `assets/img/monograma-ld-320.webp`.
 - Tom: profissional, elegante, humanizado, didático. Sem promessas de resultado, sem antes/depois, sem terrorismo nutricional (Código de Ética do Nutricionista, Res. CFN nº 599/2018). Afirmações técnicas com base científica; se citar estudo, cite corretamente (use PubMed quando disponível).
 
 ## 4. Criar a peça
