@@ -1,0 +1,2 @@
+Skills ig-* copiadas de https://github.com/Jakeschincariol/instagram-agent-skill (commit d03c56b), licença MIT (LICENSE-instagram-agent-skill).
+Única alteração: o caminho ~/.claude/instagram/ foi trocado por .claude/instagram/ (dentro do projeto), para voice.md, swipe.md e log.md não se perderem entre sessões na nuvem.
