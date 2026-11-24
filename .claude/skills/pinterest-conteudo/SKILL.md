@@ -1,6 +1,6 @@
 ---
 name: pinterest-conteudo
-description: Acessa o Pinterest da Liana Dias Nutri (pastas e pins salvos) como banco de referências visuais e cria conteúdos para Instagram — carrosséis e imagens únicas (post, capa de Reels, story) — na identidade Luxo Clínico Editorial da marca, entregando PNGs prontos para postar. Use quando a usuária falar em Pinterest, pasta/board, pins, referências visuais, moodboard, ou pedir um carrossel, post estático, imagem única, capa ou arte "no estilo das minhas referências".
+description: Acessa o Pinterest da Liana Dias Nutri (pastas e pins salvos) como banco de referências visuais e cria conteúdos para Instagram — carrosséis e imagens únicas (post, capa de Reels, story) — na identidade Luxo Clínico Editorial da marca, entregando PNGs prontos e, com aprovação dela, agendando no Instagram/Facebook (Meta) pelo Metricool. Use quando a usuária falar em Pinterest, pasta/board, pins, referências visuais, moodboard, ou pedir um carrossel, post estático, imagem única, capa ou arte "no estilo das minhas referências", ou pedir para postar, agendar ou mandar para o Instagram/Metricool.
 ---
 
 # Pinterest → Carrosséis e imagens únicas
@@ -80,7 +80,40 @@ Produção:
 3. **Revise cada PNG** (abra com Read): texto cortado, contraste, alinhamento, erros de português. Corrija e renderize de novo.
 4. Entregue os PNGs à usuária (SendUserFile) junto com a **legenda** (gancho + desenvolvimento curto + CTA + 3–5 hashtags de nicho) e o **texto alternativo** de cada slide.
 
-## 5. Entrega final (formato da resposta)
+## 5. Publicar no Instagram/Facebook (Meta, via Metricool)
+
+A conta Meta da Liana está ligada ao **Metricool** (conector `Metricool_Social_Media_Management`):
+marca "Lili", `blogId` **7886281**, fuso `America/Sao_Paulo`; Instagram @lianadias.nutri,
+Facebook, Threads, Pinterest (lianadiasandrad), LinkedIn e TikTok. Confirme com
+`getBrandSettings` antes de agendar. Nunca use outra via para postar.
+
+**Só publique ou agende com aprovação explícita da Liana para aquela peça** (PNGs, legenda,
+data/hora e redes). Aprovação anterior não vale para a próxima peça.
+
+1. **Hospedar as imagens** (o Metricool só aceita URLs): crie uma pasta no Google Drive
+   (`Google_Drive.create_file`, mimeType de pasta, título `Instagram/<AAAA-MM-DD> <tema>`),
+   envie cada PNG com `base64Content` = referência `sha256:<hash>:<caminho absoluto>`,
+   `contentMimeType: image/png`, `disableConversionToGoogleType: true`, e compartilhe cada
+   arquivo com `permissionId: "anyoneWithLink"`, `role: "reader"`. Use os links na ordem dos
+   slides. O Metricool importa links do Drive se o Google Drive estiver vinculado na conta
+   Metricool; se der erro de mídia, peça à Liana para vincular (Metricool → Conexões → Google
+   Drive) ou para subir as imagens pelo app do Metricool.
+2. **Horário**: se a Liana não disser, sugira com `getBestTimeToPostByNetwork` (instagram) e
+   confirme. Data nunca no passado.
+3. **Agendar** com `createScheduledPost`: `blogId: "7886281"`, `date` ISO com `-03:00`, e `info`:
+   `providers: [{"network":"instagram"}]` (acrescente `facebook` só se ela pedir),
+   `text` = legenda final, `media` = links na ordem, `mediaAltText` = alt text na mesma ordem,
+   `publicationDate: {dateTime, timezone:"America/Sao_Paulo"}`,
+   `instagramData: {"type":"POST"}` (carrossel = POST com várias imagens; story = `STORY`),
+   `facebookData: {"type":"POST"}` se houver Facebook, `firstCommentText` vazio,
+   `autoPublish: true`, `draft: false`.
+   Padrão seguro quando ela pedir "manda pro Metricool" sem confirmar horário: `draft: true`.
+4. Responda com o `plannerUrl` devolvido, data/hora e redes. Se o Metricool recusar, mostre o
+   erro sem alterar a legenda.
+
+Para Reels, o mesmo fluxo com `instagramData.type: "REEL"` e um vídeo em `media`.
+
+## 6. Entrega final (formato da resposta)
 
 - Pasta(s) do Pinterest usadas e 2–3 referências que guiaram a peça (com link do pin).
 - O que foi aproveitado de cada referência (estrutura) e o que foi adaptado à marca.
